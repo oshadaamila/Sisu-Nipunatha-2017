@@ -1,0 +1,20 @@
+C:\Users\pavilion 15\Documents\Visual Studio 2013\Projects\Sisu Nipunatha\Sisu Nipunatha\bin\Debug\Sisu Nipunatha.exe.config
+C:\Users\pavilion 15\Documents\Visual Studio 2013\Projects\Sisu Nipunatha\Sisu Nipunatha\bin\Debug\Sisu Nipunatha.exe
+C:\Users\pavilion 15\Documents\Visual Studio 2013\Projects\Sisu Nipunatha\Sisu Nipunatha\bin\Debug\Sisu Nipunatha.pdb
+C:\Users\pavilion 15\Documents\Visual Studio 2013\Projects\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu Nipunatha.csprojResolveAssemblyReference.cache
+C:\Users\pavilion 15\Documents\Visual Studio 2013\Projects\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu_Nipunatha.Properties.Resources.resources
+C:\Users\pavilion 15\Documents\Visual Studio 2013\Projects\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu Nipunatha.csproj.GenerateResource.Cache
+C:\Users\pavilion 15\Documents\Visual Studio 2013\Projects\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu Nipunatha.exe
+C:\Users\pavilion 15\Documents\Visual Studio 2013\Projects\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu Nipunatha.pdb
+C:\Users\pavilion 15\Documents\Visual Studio 2013\Projects\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu_Nipunatha.ControlPanel.resources
+C:\Users\pavilion 15\Documents\Visual Studio 2013\Projects\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu_Nipunatha.FullNameList.resources
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\bin\Debug\Sisu Nipunatha.exe.config
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu Nipunatha.exe
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu Nipunatha.pdb
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\bin\Debug\Sisu Nipunatha.exe
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\bin\Debug\Sisu Nipunatha.pdb
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu Nipunatha.csprojResolveAssemblyReference.cache
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu_Nipunatha.Properties.Resources.resources
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu Nipunatha.csproj.GenerateResource.Cache
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu_Nipunatha.Main_Window.resources
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu_Nipunatha.AddNewDahampasala.resources
