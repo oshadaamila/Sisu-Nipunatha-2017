@@ -32,6 +32,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MetroFramework">
+      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -55,6 +65,18 @@
     <Compile Include="AddNewDahampasala.Designer.cs">
       <DependentUpon>AddNewDahampasala.cs</DependentUpon>
     </Compile>
+    <Compile Include="edit_dahampasala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="edit_dahampasala.Designer.cs">
+      <DependentUpon>edit_dahampasala.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gradeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gradeList.Designer.cs">
+      <DependentUpon>gradeList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main_Window.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +95,12 @@
     <EmbeddedResource Include="AddNewDahampasala.resx">
       <DependentUpon>AddNewDahampasala.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="edit_dahampasala.resx">
+      <DependentUpon>edit_dahampasala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gradeList.resx">
+      <DependentUpon>gradeList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main_Window.resx">
       <DependentUpon>Main_Window.cs</DependentUpon>
     </EmbeddedResource>
@@ -88,6 +116,7 @@
     <EmbeddedResource Include="ViewDahamPasalList.resx">
       <DependentUpon>ViewDahamPasalList.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -100,6 +129,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MetroFramework.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

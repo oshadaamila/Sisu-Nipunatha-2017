@@ -18,3 +18,8 @@ C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipuna
 C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu Nipunatha.csproj.GenerateResource.Cache
 C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu_Nipunatha.Main_Window.resources
 C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu_Nipunatha.AddNewDahampasala.resources
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu_Nipunatha.ViewDahamPasalList.resources
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu_Nipunatha.edit_dahampasala.resources
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\bin\Debug\MetroFramework.dll
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu_Nipunatha.gradeList.resources

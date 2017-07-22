@@ -27,5 +27,24 @@ namespace Sisu_Nipunatha
             AddNewDahampasala and = new AddNewDahampasala();
             and.Show();
         }
+
+        private void ලකනයToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ViewDahamPasalList dpl = ViewDahamPasalList.getInstance();
+            dpl.MdiParent = this;
+            dpl.Show();
+            dpl.WindowState = FormWindowState.Maximized;
+            dpl.FormBorderStyle = FormBorderStyle.FixedSingle;
+        }
+
+        private void ශරණලයසතවToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gradeList gl = gradeList.getInstance();
+            gl.MdiParent = this;
+            gl.Show();
+            gl.WindowState = FormWindowState.Maximized;
+            gl.FormBorderStyle = FormBorderStyle.FixedSingle;
+        }
+        }
     }
-}
+
