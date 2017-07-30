@@ -45,6 +45,15 @@ namespace Sisu_Nipunatha
             gl.WindowState = FormWindowState.Maximized;
             gl.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
+
+        private void ලකනයToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            competition_list cl = competition_list.getInstance();
+            cl.MdiParent = this;
+            cl.Show();
+            cl.WindowState = FormWindowState.Maximized;
+            cl.FormBorderStyle = FormBorderStyle.FixedSingle;
+        }
         }
     }
 

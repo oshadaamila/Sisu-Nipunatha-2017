@@ -41,8 +41,8 @@
             this.අලතනඑකකරනනToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.තරගToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ලකනයToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.පරතපලToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ශරණලයසතවToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.පරතපලToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,12 +146,7 @@
             this.ලකනයToolStripMenuItem1.Name = "ලකනයToolStripMenuItem1";
             this.ලකනයToolStripMenuItem1.Size = new System.Drawing.Size(165, 22);
             this.ලකනයToolStripMenuItem1.Text = "ලේකනය";
-            // 
-            // පරතපලToolStripMenuItem
-            // 
-            this.පරතපලToolStripMenuItem.Name = "පරතපලToolStripMenuItem";
-            this.පරතපලToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.පරතපලToolStripMenuItem.Text = "ප්‍රතිපල";
+            this.ලකනයToolStripMenuItem1.Click += new System.EventHandler(this.ලකනයToolStripMenuItem1_Click);
             // 
             // ශරණලයසතවToolStripMenuItem
             // 
@@ -159,6 +154,12 @@
             this.ශරණලයසතවToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.ශරණලයසතවToolStripMenuItem.Text = "ශ්‍රේණි ලැයිස්තුව";
             this.ශරණලයසතවToolStripMenuItem.Click += new System.EventHandler(this.ශරණලයසතවToolStripMenuItem_Click);
+            // 
+            // පරතපලToolStripMenuItem
+            // 
+            this.පරතපලToolStripMenuItem.Name = "පරතපලToolStripMenuItem";
+            this.පරතපලToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.පරතපලToolStripMenuItem.Text = "ප්‍රතිපල";
             // 
             // Main_Window
             // 
