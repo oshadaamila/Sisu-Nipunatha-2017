@@ -113,6 +113,12 @@
     <Compile Include="edit_dahampasala.Designer.cs">
       <DependentUpon>edit_dahampasala.cs</DependentUpon>
     </Compile>
+    <Compile Include="edit_grades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="edit_grades.Designer.cs">
+      <DependentUpon>edit_grades.cs</DependentUpon>
+    </Compile>
     <Compile Include="gradeList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="edit_dahampasala.resx">
       <DependentUpon>edit_dahampasala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="edit_grades.resx">
+      <DependentUpon>edit_grades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gradeList.resx">
       <DependentUpon>gradeList.cs</DependentUpon>

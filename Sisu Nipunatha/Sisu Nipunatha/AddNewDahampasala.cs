@@ -41,7 +41,7 @@ namespace Sisu_Nipunatha
             }
         }
 
-        private void dhmpasalNo_nud_ValueChanged(object sender, EventArgs e)
+       /* private void dhmpasalNo_nud_ValueChanged(object sender, EventArgs e)
         {
             MySqlDataAdapter sda = new MySqlDataAdapter("select * from dahampasaltable where DP_ID = '"+dhmpasalNo_nud.Value.ToString()+"';",SqlCon.con);
             DataTable dt = new DataTable();
@@ -56,14 +56,11 @@ namespace Sisu_Nipunatha
                 avail_lbl.Text = "Available";
                 avail_lbl.ForeColor = System.Drawing.Color.Green;
             }
-        }
+        }*/
 
         private void add_btn_Click(object sender, EventArgs e)
         {
-            if (avail_lbl.Text != "Available")
-            {
-                MessageBox.Show("දහම්පාසල් අංකය පරික්ෂා කර බලන්න!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }else if(!(mobphone_txtbox.TextLength==10 || mobphone_txtbox.TextLength==0))
+            if(!(mobphone_txtbox.TextLength==10 || mobphone_txtbox.TextLength==0))
             {
                 MessageBox.Show("ජංගම දුරකථන අංකය පරික්ෂා කර බලන්න!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -78,13 +75,12 @@ namespace Sisu_Nipunatha
             {
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = SqlCon.con;
-                cmd.CommandText = "INSERT INTO `dahampasaltable`(`DP_ID`, `Name`, `Telephone_Mobile`, `Telephone_Home`) VALUES ('" + dhmpasalNo_nud.Value.ToString() + "','" + dhmpslName_txtbox.Text.ToString() + "','" + mobphone_txtbox.Text + "','" + landphone_txtbox.Text + "'); ";
+                cmd.CommandText = "INSERT INTO `dahampasaltable`(`Name`, `Telephone_Mobile`, `Telephone_Home`) VALUES ('" + dhmpslName_txtbox.Text.ToString() + "','" + mobphone_txtbox.Text + "','" + landphone_txtbox.Text + "'); ";
                 SqlCon.con.Open();
                 cmd.ExecuteNonQuery();
                 SqlCon.con.Close();
                 MessageBox.Show("දත්ත ඇතුලත් කරන ලදී!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 ViewDahamPasalList.getInstance().updateDatagridview();
-                dhmpasalNo_nud.ResetText();
                 dhmpslName_txtbox.ResetText();
                 mobphone_txtbox.ResetText();
                 landphone_txtbox.ResetText();
@@ -93,7 +89,7 @@ namespace Sisu_Nipunatha
 
         private void AddNewDahampasala_Load(object sender, EventArgs e)
         {
-            dhmpasalNo_nud_ValueChanged(sender, e);
+            //dhmpasalNo_nud_ValueChanged(sender, e);
         }
 
         private void cancel_btn_Click(object sender, EventArgs e)

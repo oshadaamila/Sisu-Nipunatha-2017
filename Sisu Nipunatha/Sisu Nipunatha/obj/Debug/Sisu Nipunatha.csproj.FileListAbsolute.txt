@@ -38,3 +38,4 @@ C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipuna
 C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\bin\Debug\System.Net.Http.Primitives.xml
 C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu Nipunatha.csproj.App.config
 C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu_Nipunatha.competition_list.resources
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu_Nipunatha.edit_grades.resources

@@ -56,13 +56,13 @@ namespace Sisu_Nipunatha
         {
             if(dataGridView1.SelectedRows.Count>0)
             {
-                String dp_ID = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-                String dp_name = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+                //String dp_ID = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                String dp_name = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
                 DialogResult result= MessageBox.Show(""+dp_name+" ඉවත් කිරීමට අවශ්‍යද?","Delete?",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
                 if(result==DialogResult.Yes)
                 {
                 MySqlCommand cmd = new MySqlCommand();
-                cmd.CommandText = "delete from dahampasaltable where DP_ID='" + dp_ID + "';";
+                cmd.CommandText = "delete from dahampasaltable where name='" + dp_name + "';";
                 cmd.Connection = SqlCon.con;
                 SqlCon.con.Open();
                 cmd.ExecuteNonQuery();
