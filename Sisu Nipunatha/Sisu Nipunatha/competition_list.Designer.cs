@@ -32,18 +32,19 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.avail_lbl = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.gradetableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dahampasalaDataSet = new Sisu_Nipunatha.dahampasalaDataSet();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.gradetableTableAdapter = new Sisu_Nipunatha.dahampasalaDataSetTableAdapters.gradetableTableAdapter();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.avail_lbl = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.gradetableTableAdapter = new Sisu_Nipunatha.dahampasalaDataSetTableAdapters.gradetableTableAdapter();
             this.button3 = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gradetableBindingSource)).BeginInit();
@@ -81,11 +82,12 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.avail_lbl);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.numericUpDown1);
@@ -96,11 +98,29 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(303, 42);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "ඉවත් වන්න";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // avail_lbl
+            // 
+            this.avail_lbl.AutoSize = true;
+            this.avail_lbl.Location = new System.Drawing.Point(204, 19);
+            this.avail_lbl.Name = "avail_lbl";
+            this.avail_lbl.Size = new System.Drawing.Size(0, 13);
+            this.avail_lbl.TabIndex = 7;
+            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(344, 43);
+            this.button2.Location = new System.Drawing.Point(384, 43);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 23);
+            this.button2.Size = new System.Drawing.Size(81, 23);
             this.button2.TabIndex = 6;
             this.button2.Text = "සුරකින්න";
             this.button2.UseVisualStyleBackColor = true;
@@ -110,6 +130,7 @@
             // 
             this.comboBox1.DataSource = this.gradetableBindingSource;
             this.comboBox1.DisplayMember = "grade";
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(344, 11);
             this.comboBox1.Name = "comboBox1";
@@ -136,13 +157,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "ශ්‍රේණිය";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(103, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(175, 20);
-            this.textBox1.TabIndex = 3;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -152,9 +166,14 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "තරගය";
             // 
-            // gradetableTableAdapter
+            // label1
             // 
-            this.gradetableTableAdapter.ClearBeforeFill = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "තරග අංකය";
             // 
             // numericUpDown1
             // 
@@ -174,22 +193,9 @@
             0});
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
-            // label1
+            // gradetableTableAdapter
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "තරග අංකය";
-            // 
-            // avail_lbl
-            // 
-            this.avail_lbl.AutoSize = true;
-            this.avail_lbl.Location = new System.Drawing.Point(204, 19);
-            this.avail_lbl.Name = "avail_lbl";
-            this.avail_lbl.Size = new System.Drawing.Size(0, 13);
-            this.avail_lbl.TabIndex = 7;
+            this.gradetableTableAdapter.ClearBeforeFill = true;
             // 
             // button3
             // 
@@ -201,6 +207,24 @@
             this.button3.Text = "ඉවත් කරන්න";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "දහම් දැනුම",
+            "පද්‍ය හා ගාථා ගායනා",
+            "ප්‍රායෝගික දැනුම",
+            "ගද්‍ය රචනා",
+            "කථික",
+            "චිත්‍ර",
+            "පාලි පද්‍ය ගායනා",
+            "මව් ගුණ,පිය ගුණ ගී ගායනා"});
+            this.comboBox2.Location = new System.Drawing.Point(103, 45);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(157, 21);
+            this.comboBox2.TabIndex = 9;
             // 
             // competition_list
             // 
@@ -231,7 +255,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private dahampasalaDataSet dahampasalaDataSet;
         private System.Windows.Forms.BindingSource gradetableBindingSource;
@@ -241,5 +264,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

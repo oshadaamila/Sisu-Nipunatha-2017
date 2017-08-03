@@ -69,6 +69,7 @@ gradetable ON competitiontable.grade=gradetable.grade;
         {
             groupBox1.Enabled = true;
             button1.Enabled = false;
+            refreshComboBox();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -77,22 +78,22 @@ gradetable ON competitiontable.grade=gradetable.grade;
             {
                 MessageBox.Show("තරඟ අංකය භාවිතයේ පවතී","Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
-            else
+            /*else
             if (textBox1.Text.Length == 0)
             {
                 MessageBox.Show("තරගය ඇතුලත් කර නොමැත!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-            }
+            }*/
             else
             {
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = SqlCon.con;
-                cmd.CommandText = "INSERT INTO `competitiontable`( `competitionid`,`competitionName`, `grade`) VALUES ('"+numericUpDown1.Value.ToString()+"','" + textBox1.Text + "','" + comboBox1.SelectedValue.ToString() + "');";
+                cmd.CommandText = "INSERT INTO `competitiontable`( `competitionid`,`competitionName`, `grade`) VALUES ('"+numericUpDown1.Value.ToString()+"','" + comboBox2.Text+ "','" + comboBox1.SelectedValue.ToString() + "');";
                 SqlCon.con.Open();
                 cmd.ExecuteNonQuery();
                 SqlCon.con.Close();
                 updateDatagridview();
                 numericUpDown1.ResetText();
-                textBox1.ResetText();
+                comboBox2.ResetText();
                 comboBox1.ResetText();
                 numericUpDown1_ValueChanged(sender, e);
             }
@@ -141,6 +142,31 @@ gradetable ON competitiontable.grade=gradetable.grade;
                    
                }
            }
+       }
+
+       private void button4_Click(object sender, EventArgs e)
+       {
+           groupBox1.Enabled = false;
+           button1.Enabled = true;
+           groupBox1.ResetText();
+       }
+       private void refreshComboBox()
+       {
+           comboBox1.DataSource = null;
+
+           MySqlDataAdapter sda = new MySqlDataAdapter("Select * from gradetable ", SqlCon.con);
+           DataTable dt = new DataTable();
+           sda.Fill(dt);
+           DataRow dr;
+           dr = dt.NewRow();
+           dr.ItemArray = new object[] { };
+
+           comboBox1.ValueMember = "grade";
+
+           comboBox1.DisplayMember = "grade";
+           comboBox1.DataSource = dt;
+
+
        }
     }
 }

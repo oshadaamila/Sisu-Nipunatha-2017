@@ -54,6 +54,24 @@ namespace Sisu_Nipunatha
             cl.WindowState = FormWindowState.Maximized;
             cl.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
+
+        private void දහමපසලToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Search_Students_By_Dahampasala ssbdp = Search_Students_By_Dahampasala.getInstance();
+            ssbdp.MdiParent = this;
+            ssbdp.Show();
+            ssbdp.WindowState = FormWindowState.Maximized;
+            ssbdp.FormBorderStyle = FormBorderStyle.FixedSingle;
+        }
+
+        private void අලතනඑකකරනනToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Add_new_student ans = Add_new_student.getInstance();
+            //ans.MdiParent = this;
+            ans.Show();
+            //ans.WindowState = FormWindowState.Maximized;
+            //ans.FormBorderStyle = FormBorderStyle.FixedSingle;
+        }
         }
     }
 

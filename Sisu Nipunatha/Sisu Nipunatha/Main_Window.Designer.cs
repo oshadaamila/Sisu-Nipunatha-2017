@@ -84,6 +84,7 @@
             this.දහමපසලToolStripMenuItem1.Name = "දහමපසලToolStripMenuItem1";
             this.දහමපසලToolStripMenuItem1.Size = new System.Drawing.Size(169, 22);
             this.දහමපසලToolStripMenuItem1.Text = "දහම්පාසල අනුව";
+            this.දහමපසලToolStripMenuItem1.Click += new System.EventHandler(this.දහමපසලToolStripMenuItem1_Click);
             // 
             // තරගයඅනවToolStripMenuItem
             // 
@@ -102,6 +103,7 @@
             this.අලතනඑකකරනනToolStripMenuItem.Name = "අලතනඑකකරනනToolStripMenuItem";
             this.අලතනඑකකරනනToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.අලතනඑකකරනනToolStripMenuItem.Text = "අලුතින් එක් කරන්න";
+            this.අලතනඑකකරනනToolStripMenuItem.Click += new System.EventHandler(this.අලතනඑකකරනනToolStripMenuItem_Click);
             // 
             // සසකරණයToolStripMenuItem
             // 
