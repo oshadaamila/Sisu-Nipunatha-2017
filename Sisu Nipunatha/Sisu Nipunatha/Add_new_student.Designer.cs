@@ -57,6 +57,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.avail_lbl = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gradetableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dahampasalaDataSet1)).BeginInit();
@@ -177,6 +178,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(190, 166);
+            this.textBox3.MaxLength = 10;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(148, 20);
             this.textBox3.TabIndex = 12;
@@ -290,11 +292,26 @@
             this.avail_lbl.TabIndex = 18;
             this.avail_lbl.Text = "Unavailable";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.Red;
+            this.checkBox1.Enabled = false;
+            this.checkBox1.ForeColor = System.Drawing.Color.White;
+            this.checkBox1.Location = new System.Drawing.Point(39, 320);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(86, 17);
+            this.checkBox1.TabIndex = 19;
+            this.checkBox1.Text = "සියලු ශ්‍රේණි";
+            this.checkBox1.UseVisualStyleBackColor = false;
+            this.checkBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.checkBox1_MouseClick);
+            // 
             // Add_new_student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(455, 348);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.avail_lbl);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -361,5 +378,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label avail_lbl;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

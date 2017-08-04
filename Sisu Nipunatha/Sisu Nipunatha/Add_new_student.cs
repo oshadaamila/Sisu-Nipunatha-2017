@@ -111,13 +111,104 @@ namespace Sisu_Nipunatha
 
         private void comboBox1_MouseClick(object sender, MouseEventArgs e)  //update the grade combobox with the correct values when it is clicked
         {
-            refreshgradeComboBox(comboBox1);
+            if (checkBox1.Checked)
+            {
+                refreshComboBox(comboBox1, "gradetable", "grade");
+            }
+            else
+            {
+                refreshgradeComboBox(comboBox1);
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)  
         {
+            
+            if (avail_lbl.Text == "Unavailable")
+            {
+                MessageBox.Show("තරග අංකය භාවිතයේ පවතී","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            else if (textBox1.Text == "")
+            {
+                MessageBox.Show("නම ඇතුලත් කර නොමැත", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (dateTimePicker1.Value == DateTime.Today)
+            {
+                MessageBox.Show("උපන්දිනය ඇතුලත් කර නොමැත", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (textBox2.Text == "")
+            {
+                MessageBox.Show("ලිපිනය ඇතුලත් කර නොමැත", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }else if(comboBox1.SelectedItem==null)
+            {
+                MessageBox.Show("ශ්‍රේණියක් තෝරා නොමැත", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (comboBox2.SelectedItem == null)
+            {
+                MessageBox.Show("තරගයක් තෝරා නොමැත", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                String competitionID = getCompetitionID(comboBox1.Text, comboBox2.Text);
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = SqlCon.con;
+                DateTime max_birthday = getMaximumAge(comboBox1.Text);          //get the maximum date for the selected student
+                try
+                {
+                    if (dateTimePicker1.Value >= max_birthday)      //checking for over age students
+                    {
+                        cmd.CommandText = "INSERT INTO `studentstable`(`StudentID`, `Name`, `Birthday`, `Address`, `Telephone No`, `CompetitionID`, `dahampasala`) VALUES('" + numericUpDown1.Value.ToString() + "','" + textBox1.Text + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + textBox2.Text + "','" + textBox3.Text + "','" + competitionID + "','" + comboBox3.Text + "');";
+                        SqlCon.con.Open();
+                        cmd.ExecuteNonQuery();
+                        SqlCon.con.Close();
+                        MessageBox.Show("දත්ත ඇතුලත් කිරීම සාර්ථකයි", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        resetValues();          //reset values
+                    }
+                    else                        //adding one to the over age students
+                    {
+                        cmd.CommandText = "INSERT INTO `studentstable`(`StudentID`, `Name`, `Birthday`, `Address`, `Telephone No`, `CompetitionID`, `dahampasala`,`overage`) VALUES('" + numericUpDown1.Value.ToString() + "','" + textBox1.Text + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + textBox2.Text + "','" + textBox3.Text + "','" + competitionID + "','" + comboBox3.Text + "',1);";
+                        SqlCon.con.Open();
+                        cmd.ExecuteNonQuery();
+                        SqlCon.con.Close();
+                        MessageBox.Show("දත්ත ඇතුලත් කිරීම සාර්ථකයි", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        resetValues();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            //resetValues();          //reset values
+        }
+        private void resetValues()
+        {
             comboBox1.DataSource = null;    //resetting the values
             comboBox2.DataSource = null;
+            numericUpDown1.ResetText();
+            textBox1.ResetText();
+            dateTimePicker1.ResetText();
+            textBox2.ResetText();
+            textBox3.ResetText();
+        }
+
+        private String getCompetitionID(String grade,String competition)            //getting the competitionID
+        {
+            MySqlDataAdapter cmd = new MySqlDataAdapter("select competitionid from competitiontable where competitionname='" + competition + "' and grade ='" + grade + "'; ",SqlCon.con);
+            DataTable dt = new DataTable();
+            cmd.Fill(dt);
+            if (dt.Rows.Count != 1)
+            {
+                MessageBox.Show("Multiple entries in the grade table with same name and grade");
+                return "None";
+            }
+            else
+            {
+                String ID = dt.Rows[0][0].ToString();
+                return ID;
+            }
+
         }
 
         private void comboBox1_ValueMemberChanged(object sender, EventArgs e)
@@ -131,6 +222,7 @@ namespace Sisu_Nipunatha
             comboBox1.Enabled = true;           //enabling grade combobox
             comboBox1.DataSource = null;        //resetting grade combo box if the birthday changed twice
             comboBox2.DataSource = null;        //resetting competition combo box if the birthday changed twice
+            checkBox1.Enabled = true;           //enabling checkbox
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -139,14 +231,14 @@ namespace Sisu_Nipunatha
             comboBox2.DataSource = null;    //resetting the values of competiton combo box
         }
 
-        private void comboBox2_MouseClick(object sender, MouseEventArgs e)
+        private void comboBox2_MouseClick(object sender, MouseEventArgs e)  //refreshing competitios values in the combo box
         {
             refreshcompetitionComboBox();
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            MySqlDataAdapter sda = new MySqlDataAdapter("select * from studentstable where studentID = '" + numericUpDown1.Value.ToString() + "';", SqlCon.con);
+            MySqlDataAdapter sda = new MySqlDataAdapter("select studentID from studentstable where studentID = '" + numericUpDown1.Value.ToString() + "';", SqlCon.con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             if (dt.Rows.Count > 0 )
@@ -174,6 +266,23 @@ namespace Sisu_Nipunatha
             {
                 e.Handled = true;
             }
+        }
+
+        private void checkBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private DateTime getMaximumAge(String grade)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = SqlCon.con;
+            cmd.CommandText = "select birthday_after from gradetable where grade = '" + grade + "';";
+            SqlCon.con.Open();
+            DateTime maxdate =Convert.ToDateTime(cmd.ExecuteScalar().ToString());
+            SqlCon.con.Close();
+            return maxdate;
+
         }
     }
 }
