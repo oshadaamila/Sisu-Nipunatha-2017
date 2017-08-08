@@ -164,6 +164,7 @@ namespace Sisu_Nipunatha
                         SqlCon.con.Close();
                         MessageBox.Show("දත්ත ඇතුලත් කිරීම සාර්ථකයි", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         resetValues();          //reset values
+                        numericUpDown1_ValueChanged(sender, e);                   
                     }
                     else                        //adding one to the over age students
                     {
@@ -173,11 +174,13 @@ namespace Sisu_Nipunatha
                         SqlCon.con.Close();
                         MessageBox.Show("දත්ත ඇතුලත් කිරීම සාර්ථකයි", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         resetValues();
+                        numericUpDown1_ValueChanged(sender, e);
                     }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                    SqlCon.con.Close();
                 }
             }
             //resetValues();          //reset values

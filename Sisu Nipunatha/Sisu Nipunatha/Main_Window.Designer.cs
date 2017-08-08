@@ -91,12 +91,14 @@
             this.තරගයඅනවToolStripMenuItem.Name = "තරගයඅනවToolStripMenuItem";
             this.තරගයඅනවToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.තරගයඅනවToolStripMenuItem.Text = "තරගය අනුව";
+            this.තරගයඅනවToolStripMenuItem.Click += new System.EventHandler(this.තරගයඅනවToolStripMenuItem_Click);
             // 
             // සයලලToolStripMenuItem
             // 
             this.සයලලToolStripMenuItem.Name = "සයලලToolStripMenuItem";
             this.සයලලToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
             this.සයලලToolStripMenuItem.Text = "සියල්ල";
+            this.සයලලToolStripMenuItem.Click += new System.EventHandler(this.සයලලToolStripMenuItem_Click);
             // 
             // අලතනඑකකරනනToolStripMenuItem
             // 

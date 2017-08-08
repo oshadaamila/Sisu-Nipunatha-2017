@@ -72,6 +72,24 @@ namespace Sisu_Nipunatha
             //ans.WindowState = FormWindowState.Maximized;
             //ans.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
+
+        private void තරගයඅනවToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            search_by_competition ssbdp = search_by_competition.getInstance();
+            ssbdp.MdiParent = this;
+            ssbdp.Show();
+            ssbdp.WindowState = FormWindowState.Maximized;
+            ssbdp.FormBorderStyle = FormBorderStyle.FixedSingle;
+        }
+
+        private void සයලලToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Search_Student ss = Search_Student.getInstance();
+            ss.MdiParent = this;
+            ss.Show();
+            ss.WindowState = FormWindowState.Maximized;
+            ss.FormBorderStyle = FormBorderStyle.FixedSingle;
+        }
         }
     }
 
