@@ -112,6 +112,7 @@
             this.සසකරණයToolStripMenuItem.Name = "සසකරණයToolStripMenuItem";
             this.සසකරණයToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.සසකරණයToolStripMenuItem.Text = "සංස්කරණය";
+            this.සසකරණයToolStripMenuItem.Click += new System.EventHandler(this.සසකරණයToolStripMenuItem_Click);
             // 
             // දහමපසලToolStripMenuItem
             // 

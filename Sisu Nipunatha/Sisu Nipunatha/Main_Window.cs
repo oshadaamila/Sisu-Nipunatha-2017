@@ -90,6 +90,12 @@ namespace Sisu_Nipunatha
             ss.WindowState = FormWindowState.Maximized;
             ss.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
+
+        private void සසකරණයToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //edit_student es = edit_student.getInstance();
+            //es.Show();
+        }
         }
     }
 
