@@ -96,6 +96,21 @@ namespace Sisu_Nipunatha
             //edit_student es = edit_student.getInstance();
             //es.Show();
         }
+
+        private void ඇතලතකරනනToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //this.Enabled = false;
+            select_competition sc = new select_competition();
+            sc.Show();
+        }
+
+        private void connectionSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            set_up_database_connection sudc = new set_up_database_connection();
+            sudc.Show();
+        }
+
+        
         }
     }
 

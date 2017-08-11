@@ -1,6 +1,6 @@
 ﻿namespace Sisu_Nipunatha
 {
-    partial class competition_name_list
+    partial class enter_results
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            
-            // competition_name_list
+            this.SuspendLayout();
+            // 
+            // enter_results
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 336);
-            this.Name = "competition_name_list";
-            this.Text = "competition_name_list";
-            this.Load += new System.EventHandler(this.competition_name_list_Load);
+            this.ClientSize = new System.Drawing.Size(763, 339);
+            this.Name = "enter_results";
+            this.Text = "enter_results";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
     }
 }

@@ -35,7 +35,6 @@
             this.තරගයඅනවToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.සයලලToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.අලතනඑකකරනනToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.සසකරණයToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.දහමපසලToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ලකනයToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.අලතනඑකකරනනToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,6 +42,10 @@
             this.ලකනයToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ශරණලයසතවToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.පරතපලToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ඇතලතකරනනToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ලකනයToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.සකසමToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.connectionSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +55,8 @@
             this.තරගකරවනToolStripMenuItem,
             this.දහමපසලToolStripMenuItem,
             this.තරගToolStripMenuItem,
-            this.පරතපලToolStripMenuItem});
+            this.පරතපලToolStripMenuItem,
+            this.සකසමToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(770, 24);
@@ -63,8 +67,7 @@
             // 
             this.තරගකරවනToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.සයනනToolStripMenuItem,
-            this.අලතනඑකකරනනToolStripMenuItem,
-            this.සසකරණයToolStripMenuItem});
+            this.අලතනඑකකරනනToolStripMenuItem});
             this.තරගකරවනToolStripMenuItem.Name = "තරගකරවනToolStripMenuItem";
             this.තරගකරවනToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
             this.තරගකරවනToolStripMenuItem.Text = "තරගකරුවන්";
@@ -106,13 +109,6 @@
             this.අලතනඑකකරනනToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.අලතනඑකකරනනToolStripMenuItem.Text = "අලුතින් එක් කරන්න";
             this.අලතනඑකකරනනToolStripMenuItem.Click += new System.EventHandler(this.අලතනඑකකරනනToolStripMenuItem_Click);
-            // 
-            // සසකරණයToolStripMenuItem
-            // 
-            this.සසකරණයToolStripMenuItem.Name = "සසකරණයToolStripMenuItem";
-            this.සසකරණයToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.සසකරණයToolStripMenuItem.Text = "සංස්කරණය";
-            this.සසකරණයToolStripMenuItem.Click += new System.EventHandler(this.සසකරණයToolStripMenuItem_Click);
             // 
             // දහමපසලToolStripMenuItem
             // 
@@ -162,9 +158,40 @@
             // 
             // පරතපලToolStripMenuItem
             // 
+            this.පරතපලToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ඇතලතකරනනToolStripMenuItem,
+            this.ලකනයToolStripMenuItem2});
             this.පරතපලToolStripMenuItem.Name = "පරතපලToolStripMenuItem";
             this.පරතපලToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.පරතපලToolStripMenuItem.Text = "ප්‍රතිපල";
+            // 
+            // ඇතලතකරනනToolStripMenuItem
+            // 
+            this.ඇතලතකරනනToolStripMenuItem.Name = "ඇතලතකරනනToolStripMenuItem";
+            this.ඇතලතකරනනToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.ඇතලතකරනනToolStripMenuItem.Text = "ඇතුලත් කරන්න";
+            this.ඇතලතකරනනToolStripMenuItem.Click += new System.EventHandler(this.ඇතලතකරනනToolStripMenuItem_Click);
+            // 
+            // ලකනයToolStripMenuItem2
+            // 
+            this.ලකනයToolStripMenuItem2.Name = "ලකනයToolStripMenuItem2";
+            this.ලකනයToolStripMenuItem2.Size = new System.Drawing.Size(167, 22);
+            this.ලකනයToolStripMenuItem2.Text = "ලේකනය";
+            // 
+            // සකසමToolStripMenuItem
+            // 
+            this.සකසමToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.connectionSettingsToolStripMenuItem});
+            this.සකසමToolStripMenuItem.Name = "සකසමToolStripMenuItem";
+            this.සකසමToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.සකසමToolStripMenuItem.Text = "සැකසුම්";
+            // 
+            // connectionSettingsToolStripMenuItem
+            // 
+            this.connectionSettingsToolStripMenuItem.Name = "connectionSettingsToolStripMenuItem";
+            this.connectionSettingsToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.connectionSettingsToolStripMenuItem.Text = "Connection Settings";
+            this.connectionSettingsToolStripMenuItem.Click += new System.EventHandler(this.connectionSettingsToolStripMenuItem_Click);
             // 
             // Main_Window
             // 
@@ -196,12 +223,15 @@
         private System.Windows.Forms.ToolStripMenuItem සයලලToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem දහමපසලToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem අලතනඑකකරනනToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem සසකරණයToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ලකනයToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem අලතනඑකකරනනToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem තරගToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ලකනයToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem පරතපලToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ශරණලයසතවToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ඇතලතකරනනToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ලකනයToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem සකසමToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem connectionSettingsToolStripMenuItem;
     }
 }

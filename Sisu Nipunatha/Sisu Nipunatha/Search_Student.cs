@@ -39,14 +39,14 @@ namespace Sisu_Nipunatha
             dataGridView1.Columns.Add(delete_button);
             edit_button.Name = "Edit";
             delete_button.Name = "Delete";
-            dataGridView1.Columns[8].DefaultCellStyle.NullValue = "Edit";
-            dataGridView1.Columns[9].DefaultCellStyle.NullValue = "Delete";
+            dataGridView1.Columns[9].DefaultCellStyle.NullValue = "Edit";
+            dataGridView1.Columns[10].DefaultCellStyle.NullValue = "Delete";
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             textBox1.ResetText();
-            MySqlDataAdapter sda = new MySqlDataAdapter("select studentstable.StudentID,studentstable.Name,studentstable.Birthday,studentstable.address,studentstable.telephone,competitiontable.competitionname,competitiontable.grade,studentstable.overage  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID where studentstable.studentID='" + numericUpDown1.Value.ToString() + "';", SqlCon.con);
+            MySqlDataAdapter sda = new MySqlDataAdapter("select studentstable.StudentID,studentstable.Name,studentstable.Birthday,studentstable.dahampasala,studentstable.address,studentstable.telephone,competitiontable.competitionname,competitiontable.grade,studentstable.overage  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID where studentstable.studentID='" + numericUpDown1.Value.ToString() + "';", SqlCon.con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGridView1.DataSource = dt;
@@ -57,7 +57,7 @@ namespace Sisu_Nipunatha
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             numericUpDown1.ResetText();
-            MySqlDataAdapter sda = new MySqlDataAdapter("select studentstable.StudentID,studentstable.Name,studentstable.Birthday,studentstable.address,studentstable.telephone,competitiontable.competitionname,competitiontable.grade,studentstable.overage  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID where studentstable.name like '%"+textBox1.Text + "%';", SqlCon.con);
+            MySqlDataAdapter sda = new MySqlDataAdapter("select studentstable.StudentID,studentstable.Name,studentstable.Birthday,studentstable.dahampasala,studentstable.address,studentstable.telephone,competitiontable.competitionname,competitiontable.grade,studentstable.overage  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID where studentstable.name like '%" + textBox1.Text + "%';", SqlCon.con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGridView1.DataSource = dt;
@@ -108,10 +108,12 @@ namespace Sisu_Nipunatha
              this.Enabled = false;
          }
 
-         private void updateDatagridview()
+         public void updateDatagridview()
          {
-             MySqlDataAdapter sda = new MySqlDataAdapter("select studentstable.StudentID,studentstable.Name,studentstable.Birthday,studentstable.address,studentstable.telephone,competitiontable.competitionname,competitiontable.grade,studentstable.overage  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID;", SqlCon.con);
+             MySqlDataAdapter sda = new MySqlDataAdapter("select studentstable.StudentID,studentstable.Name,studentstable.Birthday,studentstable.dahampasala,studentstable.address,studentstable.telephone,competitiontable.competitionname,competitiontable.grade,studentstable.overage  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID;", SqlCon.con);
              DataTable dt = new DataTable();
+             String c = SqlCon.server;
+             String a = SqlCon.connectionString;
              sda.Fill(dt);
              dataGridView1.DataSource = dt;
              dataGridView1.Refresh();

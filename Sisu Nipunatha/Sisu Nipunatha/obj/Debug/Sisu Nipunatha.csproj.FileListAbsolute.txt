@@ -44,3 +44,6 @@ C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipuna
 C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\bin\Debug\de\PdfSharp.Charting-WPF.resources.dll
 C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu_Nipunatha.Search_Student.resources
 C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu_Nipunatha.edit_student.resources
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu_Nipunatha.enter_results.resources
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu_Nipunatha.select_competition.resources
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu_Nipunatha.set_up_database_connection.resources

@@ -35,8 +35,6 @@ namespace Sisu_Nipunatha
         {
 
         }
-        public void setReportSource(CrystalReport2 cr){
-            crystalReportViewer1.ReportSource = cr;
-        }
+        
     }
 }

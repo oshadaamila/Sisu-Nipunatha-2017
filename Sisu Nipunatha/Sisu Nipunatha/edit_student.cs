@@ -70,6 +70,7 @@ namespace Sisu_Nipunatha
         private void edit_student_FormClosed(object sender, FormClosedEventArgs e)
         {
             Search_Student ss = Search_Student.getInstance();
+            ss.updateDatagridview();
             ss.Enabled = true;
         }
 
@@ -100,6 +101,7 @@ namespace Sisu_Nipunatha
         public void refreshDaatabel()
         {
             MySqlDataAdapter sda = new MySqlDataAdapter("select studentstable.StudentID,studentstable.Name,studentstable.Birthday,studentstable.address,studentstable.telephone,competitiontable.competitionname,competitiontable.grade,studentstable.dahampasala  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID where studentstable.studentID='" + studentID.ToString() + "';", SqlCon.con);
+            dt.Clear();
             sda.Fill(dt);
         }
 
@@ -306,6 +308,118 @@ namespace Sisu_Nipunatha
                 avail_lbl.Text = "Available";
                 avail_lbl.ForeColor = System.Drawing.Color.Green;
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (avail_lbl.Text == "Unavailable")
+            {
+                MessageBox.Show("තරග අංකය භාවිතයේ පවතී වෙනත් අංකයක් උත්සාහ කරන්න", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = SqlCon.con;
+                cmd.CommandText = "UPDATE `studentstable` SET `StudentID`= '" + numericUpDown1.Value.ToString() + "' WHERE `StudentID`= '"+dt.Rows[0][0].ToString()+"';";
+                SqlCon.con.Open();
+                cmd.ExecuteNonQuery();
+                SqlCon.con.Close();
+                studentID = Convert.ToInt32(numericUpDown1.Value.ToString());
+                refreshDaatabel();
+                button1_Click(sender, e);
+                button2.Enabled = false;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = SqlCon.con;
+            cmd.CommandText = "UPDATE `studentstable` SET `name`= '" + textBox1.Text + "' WHERE `StudentID`= '" + dt.Rows[0][0].ToString() + "';";
+            SqlCon.con.Open();
+            cmd.ExecuteNonQuery();
+            SqlCon.con.Close();
+            refreshDaatabel();
+            button4_Click(sender, e);
+            button3.Enabled = false;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = SqlCon.con;
+            cmd.CommandText = "UPDATE `studentstable` SET `address`= '" + textBox2.Text + "' WHERE `StudentID`= '" + dt.Rows[0][0].ToString() + "';";
+            SqlCon.con.Open();
+            cmd.ExecuteNonQuery();
+            SqlCon.con.Close();
+            refreshDaatabel();
+            button6_Click(sender, e);
+            button5.Enabled = false;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = SqlCon.con;
+            cmd.CommandText = "UPDATE `studentstable` SET `telephone`= '" + textBox3.Text + "' WHERE `StudentID`= '" + dt.Rows[0][0].ToString() + "';";
+            SqlCon.con.Open();
+            cmd.ExecuteNonQuery();
+            SqlCon.con.Close();
+            refreshDaatabel();
+            button10_Click(sender, e);
+            button9.Enabled = false;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void comboBox3_MouseClick(object sender, MouseEventArgs e)
+        {
+            comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox3.DataSource = null;
+            String test = "Select * from dahampasaltable;";
+
+            MySqlDataAdapter sda = new MySqlDataAdapter(test, SqlCon.con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            DataRow dr;
+            dr = dt.NewRow();
+            dr.ItemArray = new object[] { };
+
+            comboBox3.ValueMember ="name";
+
+            comboBox3.DisplayMember = "name";
+            comboBox3.DataSource = dt;
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = SqlCon.con;
+            cmd.CommandText = "UPDATE `studentstable` SET `dahampasala`= '" + comboBox3.Text + "' WHERE `StudentID`= '" + dt.Rows[0][0].ToString() + "';";
+            SqlCon.con.Open();
+            cmd.ExecuteNonQuery();
+            SqlCon.con.Close();
+            refreshDaatabel();
+            button16_Click(sender, e);
+            button15.Enabled = false;
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

@@ -141,12 +141,6 @@
     <Compile Include="competition_name_list.Designer.cs">
       <DependentUpon>competition_name_list.cs</DependentUpon>
     </Compile>
-    <Compile Include="CrystalReport2.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport2.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="dahampasalaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -205,6 +199,12 @@
     <Compile Include="edit_student.Designer.cs">
       <DependentUpon>edit_student.cs</DependentUpon>
     </Compile>
+    <Compile Include="enter_results.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="enter_results.Designer.cs">
+      <DependentUpon>enter_results.cs</DependentUpon>
+    </Compile>
     <Compile Include="gradeList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +238,18 @@
     <Compile Include="Search_Students_By_Dahampasala.Designer.cs">
       <DependentUpon>Search_Students_By_Dahampasala.cs</DependentUpon>
     </Compile>
+    <Compile Include="select_competition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="select_competition.Designer.cs">
+      <DependentUpon>select_competition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="set_up_database_connection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="set_up_database_connection.Designer.cs">
+      <DependentUpon>set_up_database_connection.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlCon.cs" />
     <Compile Include="ViewDahamPasalList.cs">
       <SubType>Form</SubType>
@@ -257,10 +269,6 @@
     <EmbeddedResource Include="competition_name_list.resx">
       <DependentUpon>competition_name_list.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport2.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport2.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="edit_dahampasala.resx">
       <DependentUpon>edit_dahampasala.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="edit_student.resx">
       <DependentUpon>edit_student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="enter_results.resx">
+      <DependentUpon>enter_results.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gradeList.resx">
       <DependentUpon>gradeList.cs</DependentUpon>
@@ -294,6 +305,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Search_Students_By_Dahampasala.resx">
       <DependentUpon>Search_Students_By_Dahampasala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="select_competition.resx">
+      <DependentUpon>select_competition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="set_up_database_connection.resx">
+      <DependentUpon>set_up_database_connection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewDahamPasalList.resx">
       <DependentUpon>ViewDahamPasalList.cs</DependentUpon>
