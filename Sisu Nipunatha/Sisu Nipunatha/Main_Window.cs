@@ -100,14 +100,11 @@ namespace Sisu_Nipunatha
         private void ඇතලතකරනනToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //this.Enabled = false;
-            select_competition sc = new select_competition();
-            sc.Show();
+          
         }
 
         private void connectionSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            set_up_database_connection sudc = new set_up_database_connection();
-            sudc.Show();
         }
 
         

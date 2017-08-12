@@ -70,7 +70,7 @@ namespace Sisu_Nipunatha
         private void edit_student_FormClosed(object sender, FormClosedEventArgs e)
         {
             Search_Student ss = Search_Student.getInstance();
-            ss.updateDatagridview();
+            ss.updateDataGridView();
             ss.Enabled = true;
         }
 
