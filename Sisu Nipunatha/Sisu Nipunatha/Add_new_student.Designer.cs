@@ -241,6 +241,7 @@
             this.comboBox3.Size = new System.Drawing.Size(219, 21);
             this.comboBox3.TabIndex = 15;
             this.comboBox3.ValueMember = "Name";
+            this.comboBox3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.comboBox3_MouseClick);
             // 
             // dahampasaltableBindingSource
             // 

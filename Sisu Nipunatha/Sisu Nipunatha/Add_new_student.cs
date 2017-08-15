@@ -296,5 +296,10 @@ namespace Sisu_Nipunatha
         {
             this.Close();
         }
+
+        private void comboBox3_MouseClick(object sender, MouseEventArgs e)
+        {
+            refreshComboBox(comboBox3, "dahampasaltable", "name");
+        }
     }
 }
