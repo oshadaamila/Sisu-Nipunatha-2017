@@ -158,20 +158,24 @@ namespace Sisu_Nipunatha
                 {
                     if (dateTimePicker1.Value >= max_birthday)      //checking for over age students
                     {
-                        cmd.CommandText = "INSERT INTO `studentstable`(`StudentID`, `Name`, `Birthday`, `Address`, `Telephone No`, `CompetitionID`, `dahampasala`) VALUES('" + numericUpDown1.Value.ToString() + "','" + textBox1.Text + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + textBox2.Text + "','" + textBox3.Text + "','" + competitionID + "','" + comboBox3.Text + "');";
+                        cmd.CommandText = "INSERT INTO `studentstable`(`StudentID`, `Name`, `Birthday`, `Address`, `Telephone`, `CompetitionID`, `dahampasala`) VALUES('" + numericUpDown1.Value.ToString() + "','" + textBox1.Text + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + textBox2.Text + "','" + textBox3.Text + "','" + competitionID + "','" + comboBox3.Text + "');";
                         SqlCon.con.Open();
                         cmd.ExecuteNonQuery();
                         SqlCon.con.Close();
+                        Search_Student ss = Search_Student.getInstance();
+                        ss.updateDatagridview();
                         MessageBox.Show("දත්ත ඇතුලත් කිරීම සාර්ථකයි", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         resetValues();          //reset values
                         numericUpDown1_ValueChanged(sender, e);                   
                     }
                     else                        //adding one to the over age students
                     {
-                        cmd.CommandText = "INSERT INTO `studentstable`(`StudentID`, `Name`, `Birthday`, `Address`, `Telephone No`, `CompetitionID`, `dahampasala`,`overage`) VALUES('" + numericUpDown1.Value.ToString() + "','" + textBox1.Text + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + textBox2.Text + "','" + textBox3.Text + "','" + competitionID + "','" + comboBox3.Text + "',1);";
+                        cmd.CommandText = "INSERT INTO `studentstable`(`StudentID`, `Name`, `Birthday`, `Address`, `Telephone`, `CompetitionID`, `dahampasala`,`overage`) VALUES('" + numericUpDown1.Value.ToString() + "','" + textBox1.Text + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + textBox2.Text + "','" + textBox3.Text + "','" + competitionID + "','" + comboBox3.Text + "',1);";
                         SqlCon.con.Open();
                         cmd.ExecuteNonQuery();
                         SqlCon.con.Close();
+                        Search_Student ss = Search_Student.getInstance();
+                        ss.updateDatagridview();
                         MessageBox.Show("දත්ත ඇතුලත් කිරීම සාර්ථකයි", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         resetValues();
                         numericUpDown1_ValueChanged(sender, e);
@@ -286,6 +290,11 @@ namespace Sisu_Nipunatha
             SqlCon.con.Close();
             return maxdate;
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
