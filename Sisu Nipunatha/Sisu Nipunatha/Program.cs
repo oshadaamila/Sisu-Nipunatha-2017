@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +17,9 @@ namespace Sisu_Nipunatha
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Directory.CreateDirectory("C:\\Sisu_Nipunatha");
             Application.Run(new Main_Window());
+            
         }
     }
 }

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -143,14 +144,17 @@ namespace Sisu_Nipunatha
                 xlWorkSheet.Cells[3, 2] = "තරග අංකය";
                 xlWorkSheet.Cells[3, 3] = "තරගකරුගේ නම";
                 xlWorkSheet.Cells[3, 4] = "උපන්දිනය";
-                xlWorkSheet.Columns["C"].ColumnWidth = 48;
-                xlWorkSheet.Columns["B"].ColumnWidth = 11;
-                xlWorkSheet.Columns["D"].ColumnWidth = 15;
+                xlWorkSheet.Columns["C"].ColumnWidth = 45;
+                xlWorkSheet.Columns["B"].ColumnWidth = 11.71;
+                xlWorkSheet.Columns["D"].ColumnWidth = 12;
                 xlWorkSheet.Columns["E"].autofit();
+                xlWorkSheet.get_Range("B3", "D3").Cells.HorizontalAlignment =Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+                xlWorkSheet.Columns["B"].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
                 CR.Select();
                 xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
-                
-                CR.Font.Size = 13;
+                xlWorkSheet.Cells.Font.Size = 13;
+               // String location = ""d:\\"+ comboBox1.Text +"_" +  comboBox2.Text +".pdf";
+                xlWorkSheet.ExportAsFixedFormat(Microsoft.Office.Interop.Excel.XlFixedFormatType.xlTypePDF, "C:\\Sisu_Nipunatha\\"+comboBox1.Text+"_"+comboBox2.Text);
                 //Microsoft.Office.Interop.Excel.Range BR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.get_Range();
             }
             else
@@ -164,6 +168,11 @@ namespace Sisu_Nipunatha
             DataObject dataObj = dataGridView1.GetClipboardContent();
             if (dataObj != null)
                 Clipboard.SetDataObject(dataObj);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Process.Start(@"c:\\sisu_nipunatha"); 
         }
 
     }
