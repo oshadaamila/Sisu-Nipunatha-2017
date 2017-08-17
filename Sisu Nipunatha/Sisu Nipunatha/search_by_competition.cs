@@ -139,9 +139,19 @@ namespace Sisu_Nipunatha
                 xlexcel.Visible = true;
                 xlWorkBook = xlexcel.Workbooks.Add(misValue);
                 xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
-                Microsoft.Office.Interop.Excel.Range CR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[2, 2];
+                Microsoft.Office.Interop.Excel.Range CR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[4,1];
+                xlWorkSheet.Cells[3, 2] = "තරග අංකය";
+                xlWorkSheet.Cells[3, 3] = "තරගකරුගේ නම";
+                xlWorkSheet.Cells[3, 4] = "උපන්දිනය";
+                xlWorkSheet.Columns["C"].ColumnWidth = 48;
+                xlWorkSheet.Columns["B"].ColumnWidth = 11;
+                xlWorkSheet.Columns["D"].ColumnWidth = 15;
+                xlWorkSheet.Columns["E"].autofit();
                 CR.Select();
                 xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+                
+                CR.Font.Size = 13;
+                //Microsoft.Office.Interop.Excel.Range BR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.get_Range();
             }
             else
             {

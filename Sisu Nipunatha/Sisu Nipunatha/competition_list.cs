@@ -21,7 +21,7 @@ namespace Sisu_Nipunatha
         private void competition_list_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dahampasalaDataSet.gradetable' table. You can move, or remove it, as needed.
-            this.gradetableTableAdapter.Fill(this.dahampasalaDataSet.gradetable);
+            //this.gradetableTableAdapter.Fill(this.dahampasalaDataSet.gradetable);
             updateDatagridview();
             numericUpDown1_ValueChanged(sender, e);
 

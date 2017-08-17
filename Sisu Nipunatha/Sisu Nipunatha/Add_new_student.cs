@@ -21,11 +21,11 @@ namespace Sisu_Nipunatha
         private void Add_new_student_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dahampasalaDataSet3.dahampasaltable' table. You can move, or remove it, as needed.
-            this.dahampasaltableTableAdapter.Fill(this.dahampasalaDataSet3.dahampasaltable);
+            //this.dahampasaltableTableAdapter.Fill(this.dahampasalaDataSet3.dahampasaltable);
             // TODO: This line of code loads data into the 'dahampasalaDataSet2.competitiontable' table. You can move, or remove it, as needed.
-            this.competitiontableTableAdapter.Fill(this.dahampasalaDataSet2.competitiontable);
+           // this.competitiontableTableAdapter.Fill(this.dahampasalaDataSet2.competitiontable);
             // TODO: This line of code loads data into the 'dahampasalaDataSet1.gradetable' table. You can move, or remove it, as needed.
-            this.gradetableTableAdapter.Fill(this.dahampasalaDataSet1.gradetable);
+            //this.gradetableTableAdapter.Fill(this.dahampasalaDataSet1.gradetable);
             numericUpDown1_ValueChanged(sender, e);
             
             
