@@ -143,6 +143,7 @@ namespace Sisu_Nipunatha
                 Microsoft.Office.Interop.Excel.Range CR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[4,1];
                 xlWorkSheet.Cells[3, 2] = "තරග අංකය";
                 xlWorkSheet.Cells[3, 3] = "තරගකරුගේ නම";
+                xlWorkSheet.Cells[1, 3] = comboBox1.Text + "-" + comboBox2.Text;
                 xlWorkSheet.Cells[3, 4] = "උපන්දිනය";
                 xlWorkSheet.Columns["C"].ColumnWidth = 45;
                 xlWorkSheet.Columns["B"].ColumnWidth = 11.71;
@@ -153,9 +154,16 @@ namespace Sisu_Nipunatha
                 CR.Select();
                 xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
                 xlWorkSheet.Cells.Font.Size = 13;
-               // String location = ""d:\\"+ comboBox1.Text +"_" +  comboBox2.Text +".pdf";
-                xlWorkSheet.ExportAsFixedFormat(Microsoft.Office.Interop.Excel.XlFixedFormatType.xlTypePDF, "C:\\Sisu_Nipunatha\\"+comboBox1.Text+"_"+comboBox2.Text);
-                //Microsoft.Office.Interop.Excel.Range BR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.get_Range();
+
+                xlWorkSheet.get_Range("B1", "E1").Cells.Merge();
+                xlWorkSheet.get_Range("B1", "B1").Cells.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
+                xlWorkSheet.get_Range("B1", "B1").Cells.Font.Bold = true;
+                xlWorkSheet.get_Range("B1", "B1").Cells.Font.Size = 16;
+                int last_row = 3 + dataGridView1.RowCount;
+                String last_cell = "E" + last_row.ToString();
+                Microsoft.Office.Interop.Excel.Range BR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.get_Range("B3",last_cell);
+                BR.Cells.Borders.Weight = Microsoft.Office.Interop.Excel.XlBorderWeight.xlThin;
+                xlWorkSheet.ExportAsFixedFormat(Microsoft.Office.Interop.Excel.XlFixedFormatType.xlTypePDF, "C:\\Sisu_Nipunatha\\" + comboBox1.Text + "_" + comboBox2.Text);
             }
             else
             {

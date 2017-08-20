@@ -52,18 +52,18 @@ namespace Sisu_Nipunatha
             comboBox3.Enabled = false;
             dateTimePicker1.Enabled = false;
             checkBox1.Enabled = false;
-            
+
         }
         public void loadvalues()
         {
-            
+
             numericUpDown1.Value = Convert.ToDecimal(dt.Rows[0][0].ToString());
             textBox1.Text = dt.Rows[0][1].ToString();
             dateTimePicker1.Value = Convert.ToDateTime(dt.Rows[0][2].ToString());
             textBox2.Text = dt.Rows[0][3].ToString();
             textBox3.Text = dt.Rows[0][4].ToString();
-            comboBox1.Text = dt.Rows[0][5].ToString();
-            comboBox2.Text = dt.Rows[0][6].ToString();
+            comboBox1.Text = dt.Rows[0][6].ToString();
+            comboBox2.Text = dt.Rows[0][5].ToString();
             comboBox3.Text = dt.Rows[0][7].ToString();
         }
 
@@ -80,7 +80,7 @@ namespace Sisu_Nipunatha
             {
                 if (checkforalreadyediting())
                 {
-                    MessageBox.Show("එකවර දෙකක් සංස්කරණය කල නොහැක","Error",MessageBoxButtons.OK,MessageBoxIcon.Hand);
+                    MessageBox.Show("එකවර දෙකක් සංස්කරණය කල නොහැක", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 }
                 else
                 {
@@ -96,7 +96,7 @@ namespace Sisu_Nipunatha
                 button1.Text = "Edit";
                 numericUpDown1.Value = Convert.ToDecimal(dt.Rows[0][0].ToString());
             }
-            
+
         }
         public void refreshDaatabel()
         {
@@ -126,7 +126,7 @@ namespace Sisu_Nipunatha
                 textBox1.Enabled = false;
                 button3.Enabled = false;
                 button4.Text = "Edit";
-                textBox1.Text= (dt.Rows[0][1].ToString());
+                textBox1.Text = (dt.Rows[0][1].ToString());
             }
         }
 
@@ -151,7 +151,7 @@ namespace Sisu_Nipunatha
                 textBox2.Enabled = false;
                 button5.Enabled = false;
                 button6.Text = "Edit";
-               textBox2.Text= (dt.Rows[0][3].ToString());
+                textBox2.Text = (dt.Rows[0][3].ToString());
             }
         }
 
@@ -175,13 +175,14 @@ namespace Sisu_Nipunatha
                 dateTimePicker1.Enabled = false;
                 button7.Enabled = false;
                 button8.Text = "Edit";
+                refreshDaatabel();
                 dateTimePicker1.Value = Convert.ToDateTime(dt.Rows[0][2].ToString());
             }
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            
+
             if (button10.Text == "Edit")
             {
                 if (checkforalreadyediting())
@@ -203,12 +204,13 @@ namespace Sisu_Nipunatha
                 button9.Enabled = false;
                 button10.Text = "Edit";
                 checkBox1.Enabled = false;
-                textBox3.Text= (dt.Rows[0][4].ToString());
+                textBox3.Text = (dt.Rows[0][4].ToString());
             }
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
+            String temptext = comboBox1.Text;
             if (button12.Text == "Edit")
             {
                 if (checkforalreadyediting())
@@ -217,7 +219,9 @@ namespace Sisu_Nipunatha
                 }
                 else
                 {
+                    checkBox1.Enabled = true;
                     comboBox1.Enabled = true;
+                    comboBox2.Enabled = true;
                     button11.Enabled = true;
                     button12.Text = "Cancel";
                 }
@@ -225,10 +229,16 @@ namespace Sisu_Nipunatha
             }
             else
             {
+                checkBox1.Enabled = false;
+                checkBox1.Checked = false;
                 comboBox1.Enabled = false;
+                comboBox2.Enabled = false;
                 button11.Enabled = false;
                 button12.Text = "Edit";
-                comboBox1.Text = (dt.Rows[0][5].ToString());
+                comboBox1.DropDownStyle = ComboBoxStyle.Simple;
+                refreshDaatabel();
+                comboBox1.Text = (dt.Rows[0][6].ToString());
+                comboBox2.Text = (dt.Rows[0][5].ToString());
             }
         }
 
@@ -320,7 +330,7 @@ namespace Sisu_Nipunatha
             {
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = SqlCon.con;
-                cmd.CommandText = "UPDATE `studentstable` SET `StudentID`= '" + numericUpDown1.Value.ToString() + "' WHERE `StudentID`= '"+dt.Rows[0][0].ToString()+"';";
+                cmd.CommandText = "UPDATE `studentstable` SET `StudentID`= '" + numericUpDown1.Value.ToString() + "' WHERE `StudentID`= '" + dt.Rows[0][0].ToString() + "';";
                 SqlCon.con.Open();
                 cmd.ExecuteNonQuery();
                 SqlCon.con.Close();
@@ -398,7 +408,7 @@ namespace Sisu_Nipunatha
             dr = dt.NewRow();
             dr.ItemArray = new object[] { };
 
-            comboBox3.ValueMember ="name";
+            comboBox3.ValueMember = "name";
 
             comboBox3.DisplayMember = "name";
             comboBox3.DataSource = dt;
@@ -421,7 +431,191 @@ namespace Sisu_Nipunatha
         {
 
         }
-    }
 
-        
+        private void button7_Click(object sender, EventArgs e)
+        {
+            MySqlCommand cmd1 = new MySqlCommand();
+            cmd1.Connection = SqlCon.con;
+            cmd1.CommandText = "SELECT  `Birthday_After` FROM `gradetable` WHERE `grade`= '" + comboBox1.Text + "';";
+            SqlCon.con.Open();
+            String maxdate = cmd1.ExecuteScalar().ToString();
+            SqlCon.con.Close();
+            DateTime max_date = Convert.ToDateTime(maxdate);
+            if (dateTimePicker1.Value > max_date)
+            {
+                MySqlCommand cmd2 = new MySqlCommand();
+                MySqlCommand cmd3 = new MySqlCommand();
+                cmd3.Connection = SqlCon.con;
+                cmd2.Connection = SqlCon.con;
+                cmd3.CommandText = "UPDATE `studentstable` SET `overage`= 0 WHERE studentid='" + dt.Rows[0][0].ToString() + "';";
+                cmd2.CommandText = "UPDATE `studentstable` SET `Birthday`='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' WHERE studentid='" + dt.Rows[0][0].ToString() + "';";
+                SqlCon.con.Open();
+                cmd2.ExecuteNonQuery();
+                cmd3.ExecuteNonQuery();
+                SqlCon.con.Close();
+                button8_Click(sender, e);
+                button7.Enabled = false;
+            }
+            else
+            {
+                MySqlCommand cmd2 = new MySqlCommand();
+                MySqlCommand cmd3 = new MySqlCommand();
+                cmd3.Connection = SqlCon.con;
+                cmd2.Connection = SqlCon.con;
+                cmd3.CommandText = "UPDATE `studentstable` SET `overage`= 1 WHERE studentid='" + dt.Rows[0][0].ToString() + "';";
+                cmd2.CommandText = "UPDATE `studentstable` SET `Birthday`='" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' WHERE studentid='" + dt.Rows[0][0].ToString() + "';";
+                SqlCon.con.Open();
+                cmd2.ExecuteNonQuery();
+                cmd3.ExecuteNonQuery();
+                SqlCon.con.Close();
+                button8_Click(sender, e);
+                button7.Enabled = false;
+            }
+        }
+
+        private void comboBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            if (checkBox1.Checked)
+            {
+                refreshComboBox(comboBox1, "gradetable", "grade");
+            }
+            else
+            {
+                refreshgradeComboBox(comboBox1);
+            }
+
+        }
+        private void refreshComboBox(ComboBox comboBox1, String table, String column)
+        {
+            comboBox1.DataSource = null;
+            String table1 = table;
+            String column1 = column;
+            String test = "Select * from " + table1 + ";";
+
+            MySqlDataAdapter sda = new MySqlDataAdapter(test, SqlCon.con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            DataRow dr;
+            dr = dt.NewRow();
+            dr.ItemArray = new object[] { };
+
+            comboBox1.ValueMember = column1;
+
+            comboBox1.DisplayMember = column1;
+            comboBox1.DataSource = dt;
+
+
+        }
+        private void refreshgradeComboBox(ComboBox comboBox1)       //updating the values of grade combo box checking the birthday
+        {
+            comboBox1.DataSource = null;
+            //String table1 = table;
+            //String column1 = column;
+            //String test = "Select * from gradetable where birthday_after <"+dateTimePicker1.Value.ToString("yyyy-MM-dd")+";";
+
+            MySqlDataAdapter sda = new MySqlDataAdapter("Select * from gradetable where birthday_after <'" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "';", SqlCon.con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            DataRow dr;
+            dr = dt.NewRow();
+            dr.ItemArray = new object[] { };
+
+            comboBox1.ValueMember = "grade";
+
+            comboBox1.DisplayMember = "grade";
+            comboBox1.DataSource = dt;
+
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+        if(comboBox2.Text==""){
+            MessageBox.Show("තරගයක් තෝරන්න!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        else
+	    {
+	        MySqlCommand cmd1 = new MySqlCommand();
+            cmd1.Connection = SqlCon.con;
+            cmd1.CommandText = "SELECT  `Birthday_After` FROM `gradetable` WHERE `grade`= '" + comboBox1.Text + "';";
+            MySqlCommand cmd4 = new MySqlCommand();
+            cmd4.Connection = SqlCon.con;
+            cmd4.CommandText = "SELECT `CompetitionID`FROM `competitiontable` WHERE `grade`='"+comboBox1.Text+"' AND `competitionName`='"+comboBox2.Text+"';";
+            SqlCon.con.Open();
+            String maxdate = cmd1.ExecuteScalar().ToString();
+            String competition_id = cmd4.ExecuteScalar().ToString();
+            SqlCon.con.Close();
+            DateTime max_date = Convert.ToDateTime(maxdate);
+            if (dateTimePicker1.Value > max_date)
+            {
+                MySqlCommand cmd2 = new MySqlCommand();
+                MySqlCommand cmd3 = new MySqlCommand();
+                cmd3.Connection = SqlCon.con;
+                cmd2.Connection = SqlCon.con;
+                cmd3.CommandText = "UPDATE `studentstable` SET `overage`= 0 WHERE studentid='" + dt.Rows[0][0].ToString() + "';";
+                cmd2.CommandText = "UPDATE `studentstable` SET `CompetitionID`='" + competition_id+ "' WHERE studentid='" + dt.Rows[0][0].ToString() + "';";
+                SqlCon.con.Open();
+                cmd2.ExecuteNonQuery();
+                cmd3.ExecuteNonQuery();
+                SqlCon.con.Close();
+                button12_Click(sender, e);
+                button11.Enabled = false;
+            }
+            else
+            {
+                MySqlCommand cmd2 = new MySqlCommand();
+                MySqlCommand cmd3 = new MySqlCommand();
+                cmd3.Connection = SqlCon.con;
+                cmd2.Connection = SqlCon.con;
+                cmd3.CommandText = "UPDATE `studentstable` SET `overage`= 1 WHERE studentid='" + dt.Rows[0][0].ToString() + "';";
+                cmd2.CommandText = "UPDATE `studentstable` SET `CompetitionID`='" + competition_id + "' WHERE studentid='" + dt.Rows[0][0].ToString() + "';";
+                SqlCon.con.Open();
+                cmd2.ExecuteNonQuery();
+                cmd3.ExecuteNonQuery();
+                SqlCon.con.Close();
+                button12_Click(sender, e);
+                button11.Enabled = false;
+            } 
+	}
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            
+        }
+        private void refreshcompetitionComboBox()       //updating the values of grade combo box checking the birthday
+        {
+            comboBox2.DataSource = null;
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            //String table1 = table;
+            //String column1 = column;
+            //String test = "Select * from gradetable where birthday_after <"+dateTimePicker1.Value.ToString("yyyy-MM-dd")+";";
+
+            MySqlDataAdapter sda = new MySqlDataAdapter("Select * from competitiontable where grade ='" + comboBox1.Text + "';", SqlCon.con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            DataRow dr;
+            dr = dt.NewRow();
+            dr.ItemArray = new object[] { };
+
+            comboBox2.ValueMember = "competitionname";
+
+            comboBox2.DisplayMember = "competitionname";
+            comboBox2.DataSource = dt;
+
+
+        }
+
+        private void comboBox2_MouseClick(object sender, MouseEventArgs e)
+        {
+            refreshcompetitionComboBox();
+        }
+
+        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            comboBox2.ResetText();
+        }
+
+    }     
 }
