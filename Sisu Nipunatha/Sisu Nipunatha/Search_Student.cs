@@ -45,24 +45,43 @@ namespace Sisu_Nipunatha
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            textBox1.ResetText();
-            MySqlDataAdapter sda = new MySqlDataAdapter("select studentstable.StudentID,studentstable.Name,studentstable.Birthday,studentstable.dahampasala,studentstable.address,studentstable.telephone,competitiontable.competitionname,competitiontable.grade,studentstable.overage  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID where studentstable.studentID='" + numericUpDown1.Value.ToString() + "';", SqlCon.con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            dataGridView1.DataSource = dt;
-            dataGridView1.Update();
-            dataGridView1.Refresh();
+            
+            if (numericUpDown1.Value!=0)
+            {
+                MySqlDataAdapter sda = new MySqlDataAdapter("select studentstable.StudentID,studentstable.Name,studentstable.Birthday,studentstable.dahampasala,studentstable.address,studentstable.telephone,competitiontable.competitionname,competitiontable.grade,studentstable.overage  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID where studentstable.studentID='" + numericUpDown1.Value.ToString() + "';", SqlCon.con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                dataGridView1.DataSource = dt;
+                dataGridView1.Update();
+                dataGridView1.Refresh();
+            }
+            else
+            {
+                MySqlDataAdapter sda = new MySqlDataAdapter("select studentstable.StudentID,studentstable.Name,studentstable.Birthday,studentstable.dahampasala,studentstable.address,studentstable.telephone,competitiontable.competitionname,competitiontable.grade,studentstable.overage  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID;", SqlCon.con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                dataGridView1.DataSource = dt;
+                dataGridView1.Update();
+                dataGridView1.Refresh();
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            numericUpDown1.ResetText();
-            MySqlDataAdapter sda = new MySqlDataAdapter("select studentstable.StudentID,studentstable.Name,studentstable.Birthday,studentstable.dahampasala,studentstable.address,studentstable.telephone,competitiontable.competitionname,competitiontable.grade,studentstable.overage  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID where studentstable.name like '%" + textBox1.Text + "%';", SqlCon.con);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            dataGridView1.DataSource = dt;
-            dataGridView1.Update();
-            dataGridView1.Refresh();
+            numericUpDown1.Value= 0;
+            if (textBox1.Text!=null)
+            {
+                MySqlDataAdapter sda = new MySqlDataAdapter("select studentstable.StudentID,studentstable.Name,studentstable.Birthday,studentstable.dahampasala,studentstable.address,studentstable.telephone,competitiontable.competitionname,competitiontable.grade,studentstable.overage  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID where studentstable.name like '%" + textBox1.Text + "%';", SqlCon.con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                dataGridView1.DataSource = dt;
+                dataGridView1.Update();
+                dataGridView1.Refresh();
+            }
+            else
+            {
+                updateDatagridview();
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -115,6 +134,16 @@ namespace Sisu_Nipunatha
              sda.Fill(dt);
              dataGridView1.DataSource = dt;
              dataGridView1.Refresh();
+         }
+
+         private void numericUpDown1_MouseClick(object sender, MouseEventArgs e)
+         {
+             textBox1.Clear();
+         }
+
+         private void textBox1_Click(object sender, EventArgs e)
+         {
+             numericUpDown1.Value = 0;
          }
     }
 

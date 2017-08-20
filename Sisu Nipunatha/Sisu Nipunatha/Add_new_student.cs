@@ -301,5 +301,10 @@ namespace Sisu_Nipunatha
         {
             refreshComboBox(comboBox3, "dahampasaltable", "name");
         }
+
+        private void Add_new_student_Leave(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

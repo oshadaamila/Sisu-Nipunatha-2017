@@ -44,8 +44,6 @@
             this.පරතපලToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ඇතලතකරනනToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ලකනයToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.සකසමToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.connectionSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,8 +53,7 @@
             this.තරගකරවනToolStripMenuItem,
             this.දහමපසලToolStripMenuItem,
             this.තරගToolStripMenuItem,
-            this.පරතපලToolStripMenuItem,
-            this.සකසමToolStripMenuItem});
+            this.පරතපලToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(770, 24);
@@ -178,21 +175,6 @@
             this.ලකනයToolStripMenuItem2.Size = new System.Drawing.Size(167, 22);
             this.ලකනයToolStripMenuItem2.Text = "ලේකනය";
             // 
-            // සකසමToolStripMenuItem
-            // 
-            this.සකසමToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.connectionSettingsToolStripMenuItem});
-            this.සකසමToolStripMenuItem.Name = "සකසමToolStripMenuItem";
-            this.සකසමToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.සකසමToolStripMenuItem.Text = "සැකසුම්";
-            // 
-            // connectionSettingsToolStripMenuItem
-            // 
-            this.connectionSettingsToolStripMenuItem.Name = "connectionSettingsToolStripMenuItem";
-            this.connectionSettingsToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.connectionSettingsToolStripMenuItem.Text = "Connection Settings";
-            this.connectionSettingsToolStripMenuItem.Click += new System.EventHandler(this.connectionSettingsToolStripMenuItem_Click);
-            // 
             // Main_Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,7 +213,5 @@
         private System.Windows.Forms.ToolStripMenuItem ශරණලයසතවToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ඇතලතකරනනToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ලකනයToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem සකසමToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem connectionSettingsToolStripMenuItem;
     }
 }

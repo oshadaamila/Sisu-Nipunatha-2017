@@ -142,6 +142,7 @@
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -163,6 +164,12 @@
     </Compile>
     <Compile Include="Add_new_student.Designer.cs">
       <DependentUpon>Add_new_student.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add_results.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_results.Designer.cs">
+      <DependentUpon>Add_results.cs</DependentUpon>
     </Compile>
     <Compile Include="competition_list.cs">
       <SubType>Form</SubType>
@@ -246,6 +253,7 @@
     <Compile Include="Main_Window.Designer.cs">
       <DependentUpon>Main_Window.cs</DependentUpon>
     </Compile>
+    <Compile Include="MysqlDataAdapter.cs" />
     <Compile Include="print_competition.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -279,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Add_new_student.resx">
       <DependentUpon>Add_new_student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_results.resx">
+      <DependentUpon>Add_results.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="competition_list.resx">
       <DependentUpon>competition_list.cs</DependentUpon>

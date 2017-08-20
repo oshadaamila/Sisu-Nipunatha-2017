@@ -60,7 +60,7 @@ namespace Sisu_Nipunatha
 
         private void add_btn_Click(object sender, EventArgs e)
         {
-            if(!(mobphone_txtbox.TextLength==10 || mobphone_txtbox.TextLength==0))
+            /*if(!(mobphone_txtbox.TextLength==10 || mobphone_txtbox.TextLength==0))
             {
                 MessageBox.Show("ජංගම දුරකථන අංකය පරික්ෂා කර බලන්න!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -68,7 +68,7 @@ namespace Sisu_Nipunatha
             {
                 MessageBox.Show("ස්ථාවර දුරකථන අංකය පරික්ෂා කර බලන්න!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (dhmpslName_txtbox.TextLength < 5)
+            else */if (dhmpslName_txtbox.TextLength < 5)
             {
                 MessageBox.Show("දහම්පාසලේ නම නිවැරදිව ඇතුලත් වී නොමැත!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }else
@@ -79,7 +79,7 @@ namespace Sisu_Nipunatha
                 SqlCon.con.Open();
                 cmd.ExecuteNonQuery();
                 SqlCon.con.Close();
-                MessageBox.Show("දත්ත ඇතුලත් කරන ලදී!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                MessageBox.Show("දත්ත ඇතුලත් කරන ලදී!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ViewDahamPasalList.getInstance().updateDatagridview();
                 dhmpslName_txtbox.ResetText();
                 mobphone_txtbox.ResetText();

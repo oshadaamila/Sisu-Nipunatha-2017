@@ -339,6 +339,7 @@
             this.Text = "Add_new_student";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Add_new_student_Load);
+            this.Leave += new System.EventHandler(this.Add_new_student_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gradetableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dahampasalaDataSet1)).EndInit();

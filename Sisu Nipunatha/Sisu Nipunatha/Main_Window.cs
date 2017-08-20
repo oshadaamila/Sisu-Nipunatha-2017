@@ -100,6 +100,11 @@ namespace Sisu_Nipunatha
         private void ඇතලතකරනනToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //this.Enabled = false;
+            Add_results dpl = Add_results.getInstance();
+            //dpl.MdiParent = this;
+            dpl.Show();
+           // dpl.WindowState = FormWindowState.Maximized;
+            dpl.FormBorderStyle = FormBorderStyle.FixedSingle;
           
         }
 
