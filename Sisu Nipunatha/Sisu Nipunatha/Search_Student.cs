@@ -48,7 +48,7 @@ namespace Sisu_Nipunatha
             
             if (numericUpDown1.Value!=0)
             {
-                MySqlDataAdapter sda = new MySqlDataAdapter("select studentstable.StudentID,studentstable.Name,studentstable.Birthday,studentstable.dahampasala,studentstable.address,studentstable.telephone,competitiontable.competitionname,competitiontable.grade,studentstable.overage  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID where studentstable.studentID='" + numericUpDown1.Value.ToString() + "';", SqlCon.con);
+                MySqlDataAdapter sda = new MySqlDataAdapter("select studentstable.StudentID,studentstable.Name,studentstable.Birthday,studentstable.dahampasala,studentstable.address,studentstable.telephone,competitiontable.competitionname,competitiontable.grade,studentstable.overage  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID where studentstable.studentID like'" + numericUpDown1.Value.ToString() +"%"+ "';", SqlCon.con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 dataGridView1.DataSource = dt;
@@ -129,11 +129,18 @@ namespace Sisu_Nipunatha
 
          public void updateDatagridview()
          {
-             MySqlDataAdapter sda = new MySqlDataAdapter("select studentstable.StudentID,studentstable.Name,studentstable.Birthday,studentstable.dahampasala,studentstable.address,studentstable.telephone,competitiontable.competitionname,competitiontable.grade,studentstable.overage  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID;", SqlCon.con);
+             
+             MySqlDataAdapter sda = new MySqlDataAdapter("select studentstable.StudentID,studentstable.Name,studentstable.Birthday,studentstable.dahampasala,studentstable.address,studentstable.telephone,competitiontable.competitionname,competitiontable.grade,studentstable.overage  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID order by studentid;", SqlCon.con);
+             
              DataTable dt = new DataTable();
              sda.Fill(dt);
+             
              dataGridView1.DataSource = dt;
+             
              dataGridView1.Refresh();
+             
+             toolStripStatusLabel1.Text = dataGridView1.RowCount.ToString() + " Students";
+             
          }
 
          private void numericUpDown1_MouseClick(object sender, MouseEventArgs e)
