@@ -285,7 +285,7 @@ namespace Sisu_Nipunatha {
             
             private global::System.Data.DataColumn columnBirthday;
             
-            private global::System.Data.DataColumn columnAddress;
+            private global::System.Data.DataColumn columnName_english;
             
             private global::System.Data.DataColumn columnTelephone_No;
             
@@ -352,9 +352,9 @@ namespace Sisu_Nipunatha {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AddressColumn {
+            public global::System.Data.DataColumn Name_englishColumn {
                 get {
-                    return this.columnAddress;
+                    return this.columnName_english;
                 }
             }
             
@@ -419,13 +419,13 @@ namespace Sisu_Nipunatha {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public studentstableRow AddstudentstableRow(int StudentID, string Name, System.DateTime Birthday, string Address, int Telephone_No, string dahampasala, bool overage) {
+            public studentstableRow AddstudentstableRow(int StudentID, string Name, System.DateTime Birthday, string Name_english, int Telephone_No, string dahampasala, bool overage) {
                 studentstableRow rowstudentstableRow = ((studentstableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         StudentID,
                         Name,
                         Birthday,
-                        Address,
+                        Name_english,
                         Telephone_No,
                         dahampasala,
                         overage};
@@ -461,7 +461,7 @@ namespace Sisu_Nipunatha {
                 this.columnStudentID = base.Columns["StudentID"];
                 this.columnName = base.Columns["Name"];
                 this.columnBirthday = base.Columns["Birthday"];
-                this.columnAddress = base.Columns["Address"];
+                this.columnName_english = base.Columns["Name_english"];
                 this.columnTelephone_No = base.Columns["Telephone No"];
                 this.columndahampasala = base.Columns["dahampasala"];
                 this.columnoverage = base.Columns["overage"];
@@ -476,8 +476,8 @@ namespace Sisu_Nipunatha {
                 base.Columns.Add(this.columnName);
                 this.columnBirthday = new global::System.Data.DataColumn("Birthday", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBirthday);
-                this.columnAddress = new global::System.Data.DataColumn("Address", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAddress);
+                this.columnName_english = new global::System.Data.DataColumn("Name_english", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName_english);
                 this.columnTelephone_No = new global::System.Data.DataColumn("Telephone No", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTelephone_No);
                 this.columndahampasala = new global::System.Data.DataColumn("dahampasala", typeof(string), null, global::System.Data.MappingType.Element);
@@ -491,8 +491,8 @@ namespace Sisu_Nipunatha {
                 this.columnName.AllowDBNull = false;
                 this.columnName.MaxLength = 200;
                 this.columnBirthday.AllowDBNull = false;
-                this.columnAddress.AllowDBNull = false;
-                this.columnAddress.MaxLength = 200;
+                this.columnName_english.AllowDBNull = false;
+                this.columnName_english.MaxLength = 200;
                 this.columndahampasala.AllowDBNull = false;
                 this.columndahampasala.MaxLength = 200;
                 this.columnoverage.AllowDBNull = false;
@@ -671,12 +671,12 @@ namespace Sisu_Nipunatha {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Address {
+            public string Name_english {
                 get {
-                    return ((string)(this[this.tablestudentstable.AddressColumn]));
+                    return ((string)(this[this.tablestudentstable.Name_englishColumn]));
                 }
                 set {
-                    this[this.tablestudentstable.AddressColumn] = value;
+                    this[this.tablestudentstable.Name_englishColumn] = value;
                 }
             }
             
@@ -893,7 +893,7 @@ namespace Sisu_Nipunatha.dahampasalaDataSet4TableAdapters {
             tableMapping.ColumnMappings.Add("StudentID", "StudentID");
             tableMapping.ColumnMappings.Add("Name", "Name");
             tableMapping.ColumnMappings.Add("Birthday", "Birthday");
-            tableMapping.ColumnMappings.Add("Address", "Address");
+            tableMapping.ColumnMappings.Add("Name_english", "Name_english");
             tableMapping.ColumnMappings.Add("Telephone No", "Telephone No");
             tableMapping.ColumnMappings.Add("dahampasala", "dahampasala");
             tableMapping.ColumnMappings.Add("overage", "overage");
@@ -901,8 +901,9 @@ namespace Sisu_Nipunatha.dahampasalaDataSet4TableAdapters {
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM `studentstable` WHERE ((`StudentID` = @p1) AND (`Name` = @p2) AND (`B" +
-                "irthday` = @p3) AND (`Address` = @p4) AND ((@p5 = 1 AND `Telephone No` IS NULL) " +
-                "OR (`Telephone No` = @p6)) AND (`dahampasala` = @p7) AND (`overage` = @p8))";
+                "irthday` = @p3) AND (`Name_english` = @p4) AND ((@p5 = 1 AND `Telephone No` IS N" +
+                "ULL) OR (`Telephone No` = @p6)) AND (`dahampasala` = @p7) AND (`overage` = @p8))" +
+                "";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -933,7 +934,7 @@ namespace Sisu_Nipunatha.dahampasalaDataSet4TableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Address";
+            param.SourceColumn = "Name_english";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -971,7 +972,7 @@ namespace Sisu_Nipunatha.dahampasalaDataSet4TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `studentstable` SET `StudentID` = @p1, `Name` = @p2, `Birthday` = @p3, `Address` = @p4, `Telephone No` = @p5, `dahampasala` = @p6, `overage` = @p7 WHERE ((`StudentID` = @p8) AND (`Name` = @p9) AND (`Birthday` = @p10) AND (`Address` = @p11) AND ((@p12 = 1 AND `Telephone No` IS NULL) OR (`Telephone No` = @p13)) AND (`dahampasala` = @p14) AND (`overage` = @p15))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `studentstable` SET `StudentID` = @p1, `Name` = @p2, `Birthday` = @p3, `Name_english` = @p4, `Telephone No` = @p5, `dahampasala` = @p6, `overage` = @p7 WHERE ((`StudentID` = @p8) AND (`Name` = @p9) AND (`Birthday` = @p10) AND (`Name_english` = @p11) AND ((@p12 = 1 AND `Telephone No` IS NULL) OR (`Telephone No` = @p13)) AND (`dahampasala` = @p14) AND (`overage` = @p15))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p1";
@@ -999,7 +1000,7 @@ namespace Sisu_Nipunatha.dahampasalaDataSet4TableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Address";
+            param.SourceColumn = "Name_english";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@p5";
@@ -1051,7 +1052,7 @@ namespace Sisu_Nipunatha.dahampasalaDataSet4TableAdapters {
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.IsNullable = true;
-            param.SourceColumn = "Address";
+            param.SourceColumn = "Name_english";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -1102,8 +1103,8 @@ namespace Sisu_Nipunatha.dahampasalaDataSet4TableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `StudentID`, `Name`, `Birthday`, `Address`, `Telephone No`, `dahampasala`," +
-                " `overage` FROM `studentstable`";
+            this._commandCollection[0].CommandText = "SELECT `StudentID`, `Name`, `Birthday`, `Name_english`, `Telephone No`, `dahampas" +
+                "ala`, `overage` FROM `studentstable`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

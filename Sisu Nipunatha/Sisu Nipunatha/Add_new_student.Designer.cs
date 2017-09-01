@@ -79,7 +79,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 59);
+            this.label2.Location = new System.Drawing.Point(38, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 1;
@@ -88,7 +88,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 90);
+            this.label3.Location = new System.Drawing.Point(36, 134);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 2;
@@ -97,11 +97,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 123);
+            this.label4.Location = new System.Drawing.Point(36, 98);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = "ලිපිනය";
+            this.label4.Text = "නම(English)";
             // 
             // label5
             // 
@@ -162,19 +162,21 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(190, 90);
+            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.dateTimePicker1.Location = new System.Drawing.Point(190, 127);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(219, 20);
-            this.dateTimePicker1.TabIndex = 10;
+            this.dateTimePicker1.TabIndex = 11;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(190, 123);
+            this.textBox2.Location = new System.Drawing.Point(190, 90);
+            this.textBox2.MaxLength = 20;
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(219, 37);
-            this.textBox2.TabIndex = 11;
+            this.textBox2.Size = new System.Drawing.Size(219, 21);
+            this.textBox2.TabIndex = 10;
             // 
             // textBox3
             // 
@@ -277,6 +279,7 @@
             // 
             // button2
             // 
+            this.button2.ForeColor = System.Drawing.Color.Black;
             this.button2.Location = new System.Drawing.Point(214, 314);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 23);
@@ -313,6 +316,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(455, 348);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.avail_lbl);

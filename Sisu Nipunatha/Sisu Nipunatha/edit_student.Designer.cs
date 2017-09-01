@@ -137,15 +137,16 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(174, 129);
+            this.textBox2.Location = new System.Drawing.Point(174, 94);
+            this.textBox2.MaxLength = 20;
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(219, 37);
+            this.textBox2.Size = new System.Drawing.Size(219, 20);
             this.textBox2.TabIndex = 31;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(174, 96);
+            this.dateTimePicker1.Location = new System.Drawing.Point(174, 128);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(219, 20);
             this.dateTimePicker1.TabIndex = 30;
@@ -210,16 +211,16 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 129);
+            this.label4.Location = new System.Drawing.Point(20, 97);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 23;
-            this.label4.Text = "ලිපිනය";
+            this.label4.Text = "නම (English)";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 96);
+            this.label3.Location = new System.Drawing.Point(20, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 22;
@@ -314,7 +315,7 @@
             // button5
             // 
             this.button5.Enabled = false;
-            this.button5.Location = new System.Drawing.Point(526, 145);
+            this.button5.Location = new System.Drawing.Point(526, 106);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(74, 28);
             this.button5.TabIndex = 46;
@@ -324,7 +325,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(446, 145);
+            this.button6.Location = new System.Drawing.Point(446, 106);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(74, 28);
             this.button6.TabIndex = 45;
@@ -335,7 +336,7 @@
             // button7
             // 
             this.button7.Enabled = false;
-            this.button7.Location = new System.Drawing.Point(526, 106);
+            this.button7.Location = new System.Drawing.Point(526, 140);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(74, 28);
             this.button7.TabIndex = 48;
@@ -345,7 +346,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(446, 106);
+            this.button8.Location = new System.Drawing.Point(446, 140);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(74, 28);
             this.button8.TabIndex = 47;
@@ -455,9 +456,9 @@
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button4);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);

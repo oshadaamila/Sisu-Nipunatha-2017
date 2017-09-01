@@ -139,7 +139,7 @@ namespace Sisu_Nipunatha
             }
             else if (textBox2.Text == "")
             {
-                MessageBox.Show("ලිපිනය ඇතුලත් කර නොමැත", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ඉංග්‍රීසි නම ඇතුලත් කර නොමැත", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }else if(comboBox1.SelectedItem==null)
             {
                 MessageBox.Show("ශ්‍රේණියක් තෝරා නොමැත", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -158,7 +158,7 @@ namespace Sisu_Nipunatha
                 {
                     if (dateTimePicker1.Value >= max_birthday)      //checking for over age students
                     {
-                        cmd.CommandText = "INSERT INTO `studentstable`(`StudentID`, `Name`, `Birthday`, `Address`, `Telephone`, `CompetitionID`, `dahampasala`) VALUES('" + numericUpDown1.Value.ToString() + "','" + textBox1.Text + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + textBox2.Text + "','" + textBox3.Text + "','" + competitionID + "','" + comboBox3.Text + "');";
+                        cmd.CommandText = "INSERT INTO `studentstable`(`StudentID`, `Name`, `Birthday`, `Name_english`, `Telephone`, `CompetitionID`, `dahampasala`) VALUES('" + numericUpDown1.Value.ToString() + "','" + textBox1.Text + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + textBox2.Text + "','" + textBox3.Text + "','" + competitionID + "','" + comboBox3.Text + "');";
                         SqlCon.con.Open();
                         cmd.ExecuteNonQuery();
                         SqlCon.con.Close();
@@ -170,7 +170,7 @@ namespace Sisu_Nipunatha
                     }
                     else                        //adding one to the over age students
                     {
-                        cmd.CommandText = "INSERT INTO `studentstable`(`StudentID`, `Name`, `Birthday`, `Address`, `Telephone`, `CompetitionID`, `dahampasala`,`overage`) VALUES('" + numericUpDown1.Value.ToString() + "','" + textBox1.Text + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + textBox2.Text + "','" + textBox3.Text + "','" + competitionID + "','" + comboBox3.Text + "',1);";
+                        cmd.CommandText = "INSERT INTO `studentstable`(`StudentID`, `Name`, `Birthday`, `Name_english`, `Telephone`, `CompetitionID`, `dahampasala`,`overage`) VALUES('" + numericUpDown1.Value.ToString() + "','" + textBox1.Text + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + textBox2.Text + "','" + textBox3.Text + "','" + competitionID + "','" + comboBox3.Text + "',1);";
                         SqlCon.con.Open();
                         cmd.ExecuteNonQuery();
                         SqlCon.con.Close();

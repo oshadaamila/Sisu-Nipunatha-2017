@@ -44,9 +44,9 @@ namespace Sisu_Nipunatha
             first_name.Text = dr1[1].ToString();
             first_dp.Text = dr1[2].ToString();
             comboBox3.Enabled = false;
-            comboBox3.Text = dr1[0].ToString();
+            String id = comboBox3.Text;
+            id_1.Text = id;
             comboBox3.DataSource = null;
-            //comboBox3.Text = dr1[0].ToString();
             dtforID.Rows.Remove(dr1);
         }
 
@@ -144,6 +144,98 @@ namespace Sisu_Nipunatha
             SqlCon.con.Close();
             MySqlDataAdapter sda = new MySqlDataAdapter("SELECT `StudentID`,`Name`,`dahampasala` FROM `studentstable` WHERE `CompetitionID`='" + competitionID + "';", SqlCon.con);
             sda.Fill(dtforID);
+        }
+
+        private void comboBox4_MouseClick(object sender, MouseEventArgs e)
+        {
+            comboBox4.DataSource = null;
+
+            comboBox4.ValueMember = "StudentID";
+
+            comboBox4.DisplayMember = "StudentID";
+            comboBox4.DataSource = dtforID;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            DataRow[] dr = dtforID.Select("StudentID='" + comboBox4.Text + "'");
+            DataRow dr1 = dr[0];
+            second_name.Text = dr1[1].ToString();
+            second_dp.Text = dr1[2].ToString();
+            comboBox4.Enabled = false;
+            String id = comboBox4.Text;
+            id_2.Text = id;
+            comboBox4.DataSource = null;
+            dtforID.Rows.Remove(dr1);
+        }
+
+        private void comboBox5_MouseClick(object sender, MouseEventArgs e)
+        {
+            comboBox5.DataSource = null;
+
+            comboBox5.ValueMember = "StudentID";
+
+            comboBox5.DisplayMember = "StudentID";
+            comboBox5.DataSource = dtforID;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            DataRow[] dr = dtforID.Select("StudentID='" + comboBox5.Text + "'");
+            DataRow dr1 = dr[0];
+            third_name.Text = dr1[1].ToString();
+            third_dp.Text = dr1[2].ToString();
+            comboBox5.Enabled = false;
+            String id = comboBox5.Text;
+            id_3.Text = id;
+            comboBox5.DataSource = null;
+            dtforID.Rows.Remove(dr1);
+        }
+
+        private void comboBox6_MouseClick(object sender, MouseEventArgs e)
+        {
+            comboBox6.DataSource = null;
+
+            comboBox6.ValueMember = "StudentID";
+
+            comboBox6.DisplayMember = "StudentID";
+            comboBox6.DataSource = dtforID;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            DataRow[] dr = dtforID.Select("StudentID='" + comboBox6.Text + "'");
+            DataRow dr1 = dr[0];
+            fourth_name.Text = dr1[1].ToString();
+            fourth_dp.Text = dr1[2].ToString();
+            comboBox6.Enabled = false;
+            String id = comboBox6.Text;
+            id_4.Text = id;
+            comboBox6.DataSource = null;
+            dtforID.Rows.Remove(dr1);
+        }
+
+        private void comboBox7_MouseClick(object sender, MouseEventArgs e)
+        {
+            comboBox7.DataSource = null;
+
+            comboBox7.ValueMember = "StudentID";
+
+            comboBox7.DisplayMember = "StudentID";
+            comboBox7.DataSource = dtforID;
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            DataRow[] dr = dtforID.Select("StudentID='" + comboBox7.Text + "'");
+            DataRow dr1 = dr[0];
+            fifth_name.Text = dr1[1].ToString();
+            fifth_dp.Text = dr1[2].ToString();
+            comboBox7.Enabled = false;
+            String id = comboBox7.Text;
+            id_5.Text = id;
+            comboBox7.DataSource = null;
+            dtforID.Rows.Remove(dr1);
         }
     }
 }

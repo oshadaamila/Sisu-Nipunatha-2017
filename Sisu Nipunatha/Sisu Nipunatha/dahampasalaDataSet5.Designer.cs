@@ -283,7 +283,7 @@ namespace Sisu_Nipunatha {
             
             private global::System.Data.DataColumn columnBirthday;
             
-            private global::System.Data.DataColumn columnAddress;
+            private global::System.Data.DataColumn columnName_english;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -336,9 +336,9 @@ namespace Sisu_Nipunatha {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn AddressColumn {
+            public global::System.Data.DataColumn Name_englishColumn {
                 get {
-                    return this.columnAddress;
+                    return this.columnName_english;
                 }
             }
             
@@ -379,12 +379,12 @@ namespace Sisu_Nipunatha {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public studentstableRow AddstudentstableRow(string Name, System.DateTime Birthday, string Address) {
+            public studentstableRow AddstudentstableRow(string Name, System.DateTime Birthday, string Name_english) {
                 studentstableRow rowstudentstableRow = ((studentstableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Name,
                         Birthday,
-                        Address};
+                        Name_english};
                 rowstudentstableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowstudentstableRow);
                 return rowstudentstableRow;
@@ -409,7 +409,7 @@ namespace Sisu_Nipunatha {
             internal void InitVars() {
                 this.columnName = base.Columns["Name"];
                 this.columnBirthday = base.Columns["Birthday"];
-                this.columnAddress = base.Columns["Address"];
+                this.columnName_english = base.Columns["Name_english"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -419,13 +419,13 @@ namespace Sisu_Nipunatha {
                 base.Columns.Add(this.columnName);
                 this.columnBirthday = new global::System.Data.DataColumn("Birthday", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBirthday);
-                this.columnAddress = new global::System.Data.DataColumn("Address", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAddress);
+                this.columnName_english = new global::System.Data.DataColumn("Name_english", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName_english);
                 this.columnName.AllowDBNull = false;
                 this.columnName.MaxLength = 200;
                 this.columnBirthday.AllowDBNull = false;
-                this.columnAddress.AllowDBNull = false;
-                this.columnAddress.MaxLength = 200;
+                this.columnName_english.AllowDBNull = false;
+                this.columnName_english.MaxLength = 200;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -590,12 +590,12 @@ namespace Sisu_Nipunatha {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Address {
+            public string Name_english {
                 get {
-                    return ((string)(this[this.tablestudentstable.AddressColumn]));
+                    return ((string)(this[this.tablestudentstable.Name_englishColumn]));
                 }
                 set {
-                    this[this.tablestudentstable.AddressColumn] = value;
+                    this[this.tablestudentstable.Name_englishColumn] = value;
                 }
             }
         }
@@ -761,7 +761,7 @@ namespace Sisu_Nipunatha.dahampasalaDataSet5TableAdapters {
             tableMapping.DataSetTable = "studentstable";
             tableMapping.ColumnMappings.Add("Name", "Name");
             tableMapping.ColumnMappings.Add("Birthday", "Birthday");
-            tableMapping.ColumnMappings.Add("Address", "Address");
+            tableMapping.ColumnMappings.Add("Name_english", "Name_english");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -778,7 +778,7 @@ namespace Sisu_Nipunatha.dahampasalaDataSet5TableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `Name`, `Birthday`, `Address` FROM `studentstable`";
+            this._commandCollection[0].CommandText = "SELECT `Name`, `Birthday`, `Name_english` FROM `studentstable`";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
