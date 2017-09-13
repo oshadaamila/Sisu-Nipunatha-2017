@@ -109,7 +109,7 @@ namespace Sisu_Nipunatha
         }
         public void updateDataGridView()
         {
-            MySqlDataAdapter sda = new MySqlDataAdapter(@"select studentstable.StudentID,studentstable.Name,studentstable.Birthday,CASE WHEN `overage`= 0 THEN NULL ELSE '****' END AS `overage`  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID WHERE competitiontable.competitionName='" + comboBox1.Text + "' and competitiontable.grade='" + comboBox2.Text + "';", SqlCon.con);
+            MySqlDataAdapter sda = new MySqlDataAdapter(@"select studentstable.StudentID,studentstable.Name,studentstable.Birthday,CASE WHEN `overage`= 0 THEN NULL ELSE '****' END AS `overage`  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID WHERE competitiontable.competitionName='" + comboBox1.Text + "' and competitiontable.grade='" + comboBox2.Text + "' order by studentid;", SqlCon.con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGridView1.DataSource = dt;

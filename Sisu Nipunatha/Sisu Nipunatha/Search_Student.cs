@@ -152,6 +152,31 @@ namespace Sisu_Nipunatha
          {
              numericUpDown1.Value = 0;
          }
+
+         private void checkBox1_CheckedChanged(object sender, EventArgs e)
+         {
+             if (checkBox1.Checked)
+             {
+                 numericUpDown1.Enabled = false;
+                 textBox1.Enabled = false;
+                 MySqlDataAdapter sda = new MySqlDataAdapter("select studentstable.StudentID,studentstable.Name,studentstable.Birthday,studentstable.dahampasala,studentstable.Name_english,studentstable.telephone,competitiontable.competitionname,competitiontable.grade,studentstable.overage  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID where overage= 1 order by studentid;", SqlCon.con);
+
+                 DataTable dt = new DataTable();
+                 sda.Fill(dt);
+
+                 dataGridView1.DataSource = dt;
+
+                 dataGridView1.Refresh();
+
+                 toolStripStatusLabel1.Text = dataGridView1.RowCount.ToString() + " Students";
+             }
+             else
+             {
+                 numericUpDown1.Enabled = true;
+                 textBox1.Enabled = true;
+                 updateDatagridview();
+             }
+         }
     }
 
         

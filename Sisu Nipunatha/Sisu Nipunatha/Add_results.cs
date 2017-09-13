@@ -12,6 +12,7 @@ namespace Sisu_Nipunatha
 {
     public partial class Add_results : Form
     {
+        String competition_ID;
         public Add_results()
         {
             InitializeComponent();
@@ -141,6 +142,7 @@ namespace Sisu_Nipunatha
             cmd.CommandText = "SELECT `CompetitionID`FROM `competitiontable` WHERE `grade`='" + comboBox2.Text + "' AND `competitionName`='" + comboBox1.Text + "';";
             SqlCon.con.Open();
             String competitionID = cmd.ExecuteScalar().ToString();
+            competition_ID = competitionID;
             SqlCon.con.Close();
             MySqlDataAdapter sda = new MySqlDataAdapter("SELECT `StudentID`,`Name`,`dahampasala` FROM `studentstable` WHERE `CompetitionID`='" + competitionID + "';", SqlCon.con);
             sda.Fill(dtforID);
@@ -236,6 +238,47 @@ namespace Sisu_Nipunatha
             id_5.Text = id;
             comboBox7.DataSource = null;
             dtforID.Rows.Remove(dr1);
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                setValuesInDatabase();
+                tweetHandling th = new tweetHandling(id_1.Text, id_2.Text, id_3.Text, id_4.Text, id_5.Text,competition_ID);
+                th.sendTweet();
+                editResultSheet ers = new editResultSheet(competition_ID, id_1.Text, id_2.Text, id_3.Text, id_4.Text, id_5.Text);
+                ers.edit();
+            }
+            else
+            {
+                setValuesInDatabase();
+                editResultSheet ers = new editResultSheet(competition_ID, id_1.Text, id_2.Text, id_3.Text, id_4.Text, id_5.Text);
+                ers.edit();
+            }
+            
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+        private void setValuesInDatabase()
+        {
+            MySqlCommand cmd1 = new MySqlCommand("UPDATE `studentstable` SET `win`=1,`place`=1 WHERE `StudentID`='" + id_1.Text + "';", SqlCon.con);
+            MySqlCommand cmd2 = new MySqlCommand("UPDATE `studentstable` SET `win`=1,`place`=2 WHERE `StudentID`='" + id_2.Text + "';", SqlCon.con);
+            MySqlCommand cmd3 = new MySqlCommand("UPDATE `studentstable` SET `win`=1,`place`=3 WHERE `StudentID`='" + id_3.Text + "';", SqlCon.con);
+            MySqlCommand cmd4 = new MySqlCommand("UPDATE `studentstable` SET `win`=1,`place`=4 WHERE `StudentID`='" + id_4.Text + "';", SqlCon.con);
+            MySqlCommand cmd5 = new MySqlCommand("UPDATE `studentstable` SET `win`=1,`place`=5 WHERE `StudentID`='" + id_5.Text + "';", SqlCon.con);
+            SqlCon.con.Open();
+            cmd1.ExecuteNonQuery();
+            cmd2.ExecuteNonQuery();
+            cmd3.ExecuteNonQuery();
+            cmd4.ExecuteNonQuery();
+            cmd5.ExecuteNonQuery();
+            SqlCon.con.Close();
+
         }
     }
 }

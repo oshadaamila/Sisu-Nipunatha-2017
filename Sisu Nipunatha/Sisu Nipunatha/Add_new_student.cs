@@ -164,6 +164,8 @@ namespace Sisu_Nipunatha
                         SqlCon.con.Close();
                         Search_Student ss = Search_Student.getInstance();
                         ss.updateDatagridview();
+                        Search_Students_By_Dahampasala ssd = Search_Students_By_Dahampasala.getInstance();
+                        ssd.updateDatagridview();
                         MessageBox.Show("දත්ත ඇතුලත් කිරීම සාර්ථකයි", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         resetValues();          //reset values
                         numericUpDown1_ValueChanged(sender, e);                   
@@ -175,6 +177,8 @@ namespace Sisu_Nipunatha
                         cmd.ExecuteNonQuery();
                         SqlCon.con.Close();
                         Search_Student ss = Search_Student.getInstance();
+                        Search_Students_By_Dahampasala ssd = Search_Students_By_Dahampasala.getInstance();
+                        ssd.updateDatagridview();
                         ss.updateDatagridview();
                         MessageBox.Show("දත්ත ඇතුලත් කිරීම සාර්ථකයි", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         resetValues();

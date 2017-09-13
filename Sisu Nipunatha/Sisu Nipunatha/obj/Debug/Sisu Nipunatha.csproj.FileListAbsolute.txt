@@ -50,3 +50,17 @@ C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipuna
 C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu Nipunatha.exe.manifest
 C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu Nipunatha.application
 C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu_Nipunatha.Add_results.resources
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\bin\Debug\Hammock.ClientProfile.dll
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\bin\Debug\Newtonsoft.Json.dll
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\bin\Debug\Hammock.ClientProfile.pdb
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\bin\Debug\Newtonsoft.Json.xml
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\bin\Debug\FireSharp.dll
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\bin\Debug\Microsoft.Threading.Tasks.dll
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\bin\Debug\Microsoft.Threading.Tasks.xml
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\pavilion 15\Source\Repos\Sisu-Nipunatha-2017\Sisu Nipunatha\Sisu Nipunatha\obj\Debug\Sisu Nipunatha.csproj.ResolveComReference.cache

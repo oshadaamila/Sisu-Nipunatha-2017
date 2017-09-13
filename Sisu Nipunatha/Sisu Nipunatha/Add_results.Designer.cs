@@ -57,35 +57,37 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.id_5 = new System.Windows.Forms.Label();
+            this.fifth_name = new System.Windows.Forms.Label();
+            this.fifth_dp = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.id_4 = new System.Windows.Forms.Label();
+            this.fourth_name = new System.Windows.Forms.Label();
+            this.fourth_dp = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.id_3 = new System.Windows.Forms.Label();
+            this.third_name = new System.Windows.Forms.Label();
+            this.third_dp = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.id_2 = new System.Windows.Forms.Label();
+            this.second_name = new System.Windows.Forms.Label();
+            this.second_dp = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.first_name = new System.Windows.Forms.Label();
             this.first_dp = new System.Windows.Forms.Label();
             this.id_1 = new System.Windows.Forms.Label();
-            this.id_2 = new System.Windows.Forms.Label();
-            this.id_3 = new System.Windows.Forms.Label();
-            this.id_4 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.id_5 = new System.Windows.Forms.Label();
-            this.second_name = new System.Windows.Forms.Label();
-            this.second_dp = new System.Windows.Forms.Label();
-            this.third_name = new System.Windows.Forms.Label();
-            this.third_dp = new System.Windows.Forms.Label();
-            this.fourth_name = new System.Windows.Forms.Label();
-            this.fourth_dp = new System.Windows.Forms.Label();
-            this.fifth_name = new System.Windows.Forms.Label();
-            this.fifth_dp = new System.Windows.Forms.Label();
             this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
+            this.button13 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -397,6 +399,49 @@
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "ජයග්‍රාහකයන්";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.BackColor = System.Drawing.SystemColors.Info;
+            this.tableLayoutPanel5.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
+            this.tableLayoutPanel5.ColumnCount = 3;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.id_5, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.fifth_name, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.fifth_dp, 2, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(10, 178);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(439, 23);
+            this.tableLayoutPanel5.TabIndex = 4;
+            // 
+            // id_5
+            // 
+            this.id_5.AutoSize = true;
+            this.id_5.Location = new System.Drawing.Point(6, 3);
+            this.id_5.Name = "id_5";
+            this.id_5.Size = new System.Drawing.Size(0, 13);
+            this.id_5.TabIndex = 0;
+            // 
+            // fifth_name
+            // 
+            this.fifth_name.AutoSize = true;
+            this.fifth_name.Location = new System.Drawing.Point(66, 3);
+            this.fifth_name.Name = "fifth_name";
+            this.fifth_name.Size = new System.Drawing.Size(0, 13);
+            this.fifth_name.TabIndex = 1;
+            // 
+            // fifth_dp
+            // 
+            this.fifth_dp.AutoSize = true;
+            this.fifth_dp.Location = new System.Drawing.Point(254, 3);
+            this.fifth_dp.Name = "fifth_dp";
+            this.fifth_dp.Size = new System.Drawing.Size(0, 13);
+            this.fifth_dp.TabIndex = 2;
             // 
             // tableLayoutPanel4
             // 
@@ -416,6 +461,30 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(439, 23);
             this.tableLayoutPanel4.TabIndex = 3;
             // 
+            // id_4
+            // 
+            this.id_4.AutoSize = true;
+            this.id_4.Location = new System.Drawing.Point(6, 3);
+            this.id_4.Name = "id_4";
+            this.id_4.Size = new System.Drawing.Size(0, 13);
+            this.id_4.TabIndex = 0;
+            // 
+            // fourth_name
+            // 
+            this.fourth_name.AutoSize = true;
+            this.fourth_name.Location = new System.Drawing.Point(66, 3);
+            this.fourth_name.Name = "fourth_name";
+            this.fourth_name.Size = new System.Drawing.Size(0, 13);
+            this.fourth_name.TabIndex = 1;
+            // 
+            // fourth_dp
+            // 
+            this.fourth_dp.AutoSize = true;
+            this.fourth_dp.Location = new System.Drawing.Point(254, 3);
+            this.fourth_dp.Name = "fourth_dp";
+            this.fourth_dp.Size = new System.Drawing.Size(0, 13);
+            this.fourth_dp.TabIndex = 2;
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.BackColor = System.Drawing.SystemColors.Info;
@@ -434,6 +503,30 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(439, 23);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
+            // id_3
+            // 
+            this.id_3.AutoSize = true;
+            this.id_3.Location = new System.Drawing.Point(6, 3);
+            this.id_3.Name = "id_3";
+            this.id_3.Size = new System.Drawing.Size(0, 13);
+            this.id_3.TabIndex = 0;
+            // 
+            // third_name
+            // 
+            this.third_name.AutoSize = true;
+            this.third_name.Location = new System.Drawing.Point(64, 3);
+            this.third_name.Name = "third_name";
+            this.third_name.Size = new System.Drawing.Size(0, 13);
+            this.third_name.TabIndex = 1;
+            // 
+            // third_dp
+            // 
+            this.third_dp.AutoSize = true;
+            this.third_dp.Location = new System.Drawing.Point(253, 3);
+            this.third_dp.Name = "third_dp";
+            this.third_dp.Size = new System.Drawing.Size(0, 13);
+            this.third_dp.TabIndex = 2;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.Info;
@@ -451,6 +544,30 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(439, 23);
             this.tableLayoutPanel2.TabIndex = 1;
+            // 
+            // id_2
+            // 
+            this.id_2.AutoSize = true;
+            this.id_2.Location = new System.Drawing.Point(6, 3);
+            this.id_2.Name = "id_2";
+            this.id_2.Size = new System.Drawing.Size(0, 13);
+            this.id_2.TabIndex = 0;
+            // 
+            // second_name
+            // 
+            this.second_name.AutoSize = true;
+            this.second_name.Location = new System.Drawing.Point(65, 3);
+            this.second_name.Name = "second_name";
+            this.second_name.Size = new System.Drawing.Size(0, 13);
+            this.second_name.TabIndex = 1;
+            // 
+            // second_dp
+            // 
+            this.second_dp.AutoSize = true;
+            this.second_dp.Location = new System.Drawing.Point(253, 3);
+            this.second_dp.Name = "second_dp";
+            this.second_dp.Size = new System.Drawing.Size(0, 13);
+            this.second_dp.TabIndex = 2;
             // 
             // tableLayoutPanel1
             // 
@@ -495,125 +612,33 @@
             this.id_1.Size = new System.Drawing.Size(0, 13);
             this.id_1.TabIndex = 2;
             // 
-            // id_2
+            // button13
             // 
-            this.id_2.AutoSize = true;
-            this.id_2.Location = new System.Drawing.Point(6, 3);
-            this.id_2.Name = "id_2";
-            this.id_2.Size = new System.Drawing.Size(0, 13);
-            this.id_2.TabIndex = 0;
+            this.button13.Location = new System.Drawing.Point(561, 311);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(105, 32);
+            this.button13.TabIndex = 8;
+            this.button13.Text = "Save";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
-            // id_3
+            // checkBox1
             // 
-            this.id_3.AutoSize = true;
-            this.id_3.Location = new System.Drawing.Point(6, 3);
-            this.id_3.Name = "id_3";
-            this.id_3.Size = new System.Drawing.Size(0, 13);
-            this.id_3.TabIndex = 0;
-            // 
-            // id_4
-            // 
-            this.id_4.AutoSize = true;
-            this.id_4.Location = new System.Drawing.Point(6, 3);
-            this.id_4.Name = "id_4";
-            this.id_4.Size = new System.Drawing.Size(0, 13);
-            this.id_4.TabIndex = 0;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.BackColor = System.Drawing.SystemColors.Info;
-            this.tableLayoutPanel5.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
-            this.tableLayoutPanel5.ColumnCount = 3;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.id_5, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.fifth_name, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.fifth_dp, 2, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(10, 178);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(439, 23);
-            this.tableLayoutPanel5.TabIndex = 4;
-            // 
-            // id_5
-            // 
-            this.id_5.AutoSize = true;
-            this.id_5.Location = new System.Drawing.Point(6, 3);
-            this.id_5.Name = "id_5";
-            this.id_5.Size = new System.Drawing.Size(0, 13);
-            this.id_5.TabIndex = 0;
-            // 
-            // second_name
-            // 
-            this.second_name.AutoSize = true;
-            this.second_name.Location = new System.Drawing.Point(65, 3);
-            this.second_name.Name = "second_name";
-            this.second_name.Size = new System.Drawing.Size(0, 13);
-            this.second_name.TabIndex = 1;
-            // 
-            // second_dp
-            // 
-            this.second_dp.AutoSize = true;
-            this.second_dp.Location = new System.Drawing.Point(253, 3);
-            this.second_dp.Name = "second_dp";
-            this.second_dp.Size = new System.Drawing.Size(0, 13);
-            this.second_dp.TabIndex = 2;
-            // 
-            // third_name
-            // 
-            this.third_name.AutoSize = true;
-            this.third_name.Location = new System.Drawing.Point(64, 3);
-            this.third_name.Name = "third_name";
-            this.third_name.Size = new System.Drawing.Size(0, 13);
-            this.third_name.TabIndex = 1;
-            // 
-            // third_dp
-            // 
-            this.third_dp.AutoSize = true;
-            this.third_dp.Location = new System.Drawing.Point(253, 3);
-            this.third_dp.Name = "third_dp";
-            this.third_dp.Size = new System.Drawing.Size(0, 13);
-            this.third_dp.TabIndex = 2;
-            // 
-            // fourth_name
-            // 
-            this.fourth_name.AutoSize = true;
-            this.fourth_name.Location = new System.Drawing.Point(66, 3);
-            this.fourth_name.Name = "fourth_name";
-            this.fourth_name.Size = new System.Drawing.Size(0, 13);
-            this.fourth_name.TabIndex = 1;
-            // 
-            // fourth_dp
-            // 
-            this.fourth_dp.AutoSize = true;
-            this.fourth_dp.Location = new System.Drawing.Point(254, 3);
-            this.fourth_dp.Name = "fourth_dp";
-            this.fourth_dp.Size = new System.Drawing.Size(0, 13);
-            this.fourth_dp.TabIndex = 2;
-            // 
-            // fifth_name
-            // 
-            this.fifth_name.AutoSize = true;
-            this.fifth_name.Location = new System.Drawing.Point(66, 3);
-            this.fifth_name.Name = "fifth_name";
-            this.fifth_name.Size = new System.Drawing.Size(0, 13);
-            this.fifth_name.TabIndex = 1;
-            // 
-            // fifth_dp
-            // 
-            this.fifth_dp.AutoSize = true;
-            this.fifth_dp.Location = new System.Drawing.Point(254, 3);
-            this.fifth_dp.Name = "fifth_dp";
-            this.fifth_dp.Size = new System.Drawing.Size(0, 13);
-            this.fifth_dp.TabIndex = 2;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(465, 320);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(84, 17);
+            this.checkBox1.TabIndex = 9;
+            this.checkBox1.Text = "Send Tweet";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // Add_results
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(887, 355);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.button13);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -625,6 +650,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -633,9 +660,8 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -691,5 +717,7 @@
         private System.Windows.Forms.Label third_name;
         private System.Windows.Forms.Label third_dp;
         private System.DirectoryServices.DirectoryEntry directoryEntry1;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
