@@ -145,9 +145,13 @@ namespace Sisu_Nipunatha
                 xlWorkSheet.Cells[3, 3] = "තරගකරුගේ නම";
                 xlWorkSheet.Cells[1, 3] = comboBox1.Text + "-" + comboBox2.Text;
                 xlWorkSheet.Cells[3, 4] = "උපන්දිනය";
-                xlWorkSheet.Columns["C"].ColumnWidth = 45;
-                xlWorkSheet.Columns["B"].ColumnWidth = 11.71;
-                xlWorkSheet.Columns["D"].ColumnWidth = 12;
+                xlWorkSheet.get_Range("B3", "D3").Cells.Font.Bold = true;
+                xlWorkSheet.get_Range("B3", "D3").VerticalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignFill;
+                xlWorkSheet.get_Range("B3", "D3").Cells.WrapText = true;
+                xlWorkSheet.Columns["A"].ColumnWidth = 2;
+                xlWorkSheet.Columns["C"].ColumnWidth = 57;
+                xlWorkSheet.Columns["B"].ColumnWidth = 10;
+                xlWorkSheet.Columns["D"].ColumnWidth = 17;
                 xlWorkSheet.Columns["E"].autofit();
                 xlWorkSheet.get_Range("B3", "D3").Cells.HorizontalAlignment =Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
                 xlWorkSheet.Columns["B"].HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
@@ -158,11 +162,16 @@ namespace Sisu_Nipunatha
                 xlWorkSheet.get_Range("B1", "E1").Cells.Merge();
                 xlWorkSheet.get_Range("B1", "B1").Cells.HorizontalAlignment = Microsoft.Office.Interop.Excel.XlHAlign.xlHAlignCenter;
                 xlWorkSheet.get_Range("B1", "B1").Cells.Font.Bold = true;
-                xlWorkSheet.get_Range("B1", "B1").Cells.Font.Size = 16;
+                xlWorkSheet.get_Range("B1", "B1").Cells.Font.Size = 20;
+
+                xlWorkSheet.get_Range("B3", "E31").Cells.Font.Size = 18;
                 int last_row = 3 + dataGridView1.RowCount;
                 String last_cell = "E" + last_row.ToString();
                 Microsoft.Office.Interop.Excel.Range BR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.get_Range("B3",last_cell);
                 BR.Cells.Borders.Weight = Microsoft.Office.Interop.Excel.XlBorderWeight.xlThin;
+                xlWorkSheet.PageSetup.PaperSize = Microsoft.Office.Interop.Excel.XlPaperSize.xlPaperA4;
+                xlWorkSheet.PageSetup.LeftMargin = 0;
+                xlWorkSheet.PageSetup.RightMargin = 0;
                 xlWorkSheet.ExportAsFixedFormat(Microsoft.Office.Interop.Excel.XlFixedFormatType.xlTypePDF, "C:\\Sisu_Nipunatha\\" + comboBox1.Text + "_" + comboBox2.Text);
             }
             else

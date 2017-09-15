@@ -49,6 +49,7 @@ namespace Sisu_Nipunatha
             id_1.Text = id;
             comboBox3.DataSource = null;
             dtforID.Rows.Remove(dr1);
+            button3.Enabled = false;
         }
 
         private void comboBox2_MouseClick(object sender, MouseEventArgs e)
@@ -128,9 +129,34 @@ namespace Sisu_Nipunatha
 
         private void button1_Click(object sender, EventArgs e)
         {
-            comboBox1.Enabled = false;
-            comboBox2.Enabled = false;
-            refreshDatatable();
+            if(!resultreleased()){
+                comboBox1.Enabled = false;
+                comboBox2.Enabled = false;
+                button2.Enabled = true;
+                groupBox2.Enabled = true;
+                button1.Enabled = false;
+                button3.Enabled = true;
+                button6.Enabled = true;
+                button8.Enabled = true;
+                button10.Enabled = true;
+                button12.Enabled = true;
+                comboBox3.Enabled = true;
+                comboBox4.Enabled = true;
+                comboBox5.Enabled = true;
+                comboBox6.Enabled = true;
+                comboBox7.Enabled = true;
+                comboBox3.DataSource = null;
+                comboBox4.DataSource = null;
+                comboBox5.DataSource = null;
+                comboBox6.DataSource = null;
+                comboBox7.DataSource = null;
+                refreshDatatable();
+            }
+            else
+            {
+                MessageBox.Show("ප්‍රතිඵල නිකුත් කර අවසානයි!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
             
         }
         DataTable dtforID= new DataTable();
@@ -144,8 +170,9 @@ namespace Sisu_Nipunatha
             String competitionID = cmd.ExecuteScalar().ToString();
             competition_ID = competitionID;
             SqlCon.con.Close();
-            MySqlDataAdapter sda = new MySqlDataAdapter("SELECT `StudentID`,`Name`,`dahampasala` FROM `studentstable` WHERE `CompetitionID`='" + competitionID + "';", SqlCon.con);
-            sda.Fill(dtforID);
+            MySqlDataAdapter sda1 = new MySqlDataAdapter("SELECT `StudentID`,`Name`,`dahampasala` FROM `studentstable` WHERE `CompetitionID`='" + competitionID + "';", SqlCon.con);
+            dtforID.Clear();
+            sda1.Fill(dtforID);
         }
 
         private void comboBox4_MouseClick(object sender, MouseEventArgs e)
@@ -169,6 +196,7 @@ namespace Sisu_Nipunatha
             id_2.Text = id;
             comboBox4.DataSource = null;
             dtforID.Rows.Remove(dr1);
+            button6.Enabled = false;
         }
 
         private void comboBox5_MouseClick(object sender, MouseEventArgs e)
@@ -192,6 +220,7 @@ namespace Sisu_Nipunatha
             id_3.Text = id;
             comboBox5.DataSource = null;
             dtforID.Rows.Remove(dr1);
+            button8.Enabled = false;
         }
 
         private void comboBox6_MouseClick(object sender, MouseEventArgs e)
@@ -215,6 +244,8 @@ namespace Sisu_Nipunatha
             id_4.Text = id;
             comboBox6.DataSource = null;
             dtforID.Rows.Remove(dr1);
+            button10.Enabled = false;
+
         }
 
         private void comboBox7_MouseClick(object sender, MouseEventArgs e)
@@ -238,6 +269,7 @@ namespace Sisu_Nipunatha
             id_5.Text = id;
             comboBox7.DataSource = null;
             dtforID.Rows.Remove(dr1);
+            button12.Enabled = false;
         }
 
         private void button13_Click(object sender, EventArgs e)
@@ -249,6 +281,7 @@ namespace Sisu_Nipunatha
                 th.sendTweet();
                 editResultSheet ers = new editResultSheet(competition_ID, id_1.Text, id_2.Text, id_3.Text, id_4.Text, id_5.Text);
                 ers.edit();
+                MessageBox.Show("ප්‍රතිපල නිකුත් කරන ලදී!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -258,6 +291,22 @@ namespace Sisu_Nipunatha
             }
             
 
+        }
+        public bool resultreleased()
+        {
+            MySqlDataAdapter sda = new MySqlDataAdapter("SELECT * FROM `studentstable` WHERE `win`=1 and `CompetitionID`=(SELECT `CompetitionID`FROM `competitiontable` WHERE `grade`='" + comboBox2.Text + "' AND `competitionName`='" + comboBox1.Text +"');",SqlCon.con);
+            //cmd.CommandText = "SELECT `CompetitionID`FROM `competitiontable` WHERE `grade`='" + comboBox2.Text + "' AND `competitionName`='" + comboBox1.Text + "';";
+            //SqlCon.con.Open();
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
@@ -278,6 +327,41 @@ namespace Sisu_Nipunatha
             cmd4.ExecuteNonQuery();
             cmd5.ExecuteNonQuery();
             SqlCon.con.Close();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            button1.Enabled = true;
+            comboBox7.DataSource = null;
+            comboBox6.DataSource = null;
+            comboBox3.DataSource = null;
+            comboBox4.DataSource = null;
+            comboBox5.DataSource = null;
+            groupBox2.Enabled = false;
+            comboBox1.Enabled = true;
+            comboBox2.Enabled = true;
+            id_1.ResetText();
+            id_2.ResetText();
+            id_3.ResetText();
+            id_4.ResetText();
+            id_5.ResetText();
+            first_name.ResetText();
+            first_dp.ResetText();
+            second_dp.ResetText();
+            second_name.ResetText();
+            third_dp.ResetText();
+            third_name.ResetText();
+            fourth_dp.ResetText();
+            fourth_name.ResetText();
+            fifth_dp.ResetText();
+            fifth_name.ResetText();
+
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -283,6 +283,12 @@
     <Compile Include="ViewDahamPasalList.Designer.cs">
       <DependentUpon>ViewDahamPasalList.cs</DependentUpon>
     </Compile>
+    <Compile Include="View_Results.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View_Results.Designer.cs">
+      <DependentUpon>View_Results.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddNewDahampasala.resx">
       <DependentUpon>AddNewDahampasala.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewDahamPasalList.resx">
       <DependentUpon>ViewDahamPasalList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_Results.resx">
+      <DependentUpon>View_Results.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="dahampasalaDataSet.xsc">
       <DependentUpon>dahampasalaDataSet.xsd</DependentUpon>

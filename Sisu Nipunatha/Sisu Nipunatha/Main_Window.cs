@@ -117,6 +117,12 @@ namespace Sisu_Nipunatha
 
         }
 
+        private void ලකනයToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            View_Results vr = new View_Results();
+            vr.Show();
+        }
+
         
         }
     }

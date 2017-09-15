@@ -52,6 +52,9 @@ namespace Sisu_Nipunatha
             excelWorksheet.Cells[first_cell + 2, 5] = dtforID.Rows[2][2].ToString();
             excelWorksheet.Cells[first_cell + 3, 5] = dtforID.Rows[3][2].ToString();
             excelWorksheet.Cells[first_cell + 4, 5] = dtforID.Rows[4][2].ToString();
+            excelWorkbook.Save();
+            excelWorkbook.Close();
+            excelApp.Quit();
          }
         public void loadvalues()
         {

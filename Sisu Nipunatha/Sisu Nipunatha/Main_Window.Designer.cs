@@ -176,6 +176,7 @@
             this.ලකනයToolStripMenuItem2.Name = "ලකනයToolStripMenuItem2";
             this.ලකනයToolStripMenuItem2.Size = new System.Drawing.Size(167, 22);
             this.ලකනයToolStripMenuItem2.Text = "ලේකනය";
+            this.ලකනයToolStripMenuItem2.Click += new System.EventHandler(this.ලකනයToolStripMenuItem2_Click);
             // 
             // Main_Window
             // 
