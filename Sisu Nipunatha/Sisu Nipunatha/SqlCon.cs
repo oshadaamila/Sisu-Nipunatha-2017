@@ -14,9 +14,9 @@ namespace Sisu_Nipunatha
         public static String password = "";
         public static String database = "dahampasala";
         public static String connectionString = "server=" + server + ";port=3306;user id="+username+";database="+database+";password="+password+";Charset=utf8";
-        public static MySqlConnection con = new MySqlConnection("server=smbiz.lankahost.net;user id=srisara1_amila;database=srisara1_Daham;password=123456789;Charset=utf8");
+        //public static MySqlConnection con = new MySqlConnection("server=smbiz.lankahost.net;user id=srisara1_amila;database=srisara1_Daham;password=123456789;Charset=utf8");
         //public static MySqlConnection con = new MySqlConnection("server=sql12.freemysqlhosting.net;user id=sql12189588;database=sql12189588;password=3QMbvRkygj;Charset=utf8");
-        //public static MySqlConnection con = new MySqlConnection(connectionString);
+        public static MySqlConnection con = new MySqlConnection(connectionString);
         
         
     }

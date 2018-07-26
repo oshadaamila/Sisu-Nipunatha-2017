@@ -27,8 +27,8 @@ namespace Sisu_Nipunatha
             dataGridView1.Columns.Add(delete_button);
             edit_button.Name = "Edit";
             delete_button.Name = "Delete";
-            dataGridView1.Columns[8].DefaultCellStyle.NullValue = "Edit";
-            dataGridView1.Columns[9].DefaultCellStyle.NullValue = "Delete";
+            dataGridView1.Columns[7].DefaultCellStyle.NullValue = "Edit";
+            dataGridView1.Columns[8].DefaultCellStyle.NullValue = "Delete";
         }
         private static Search_Students_By_Dahampasala inst6;
 
@@ -67,7 +67,7 @@ namespace Sisu_Nipunatha
         }
         public void updateDatagridview()
         {
-            MySqlDataAdapter sda = new MySqlDataAdapter("select studentstable.StudentID,studentstable.Name,studentstable.Birthday,studentstable.Name_english,studentstable.telephone,competitiontable.competitionname,competitiontable.grade,studentstable.overage  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID where studentstable.dahampasala='" + comboBox1.Text + "';", SqlCon.con);
+            MySqlDataAdapter sda = new MySqlDataAdapter("select studentstable.StudentID,studentstable.Name,studentstable.Birthday,studentstable.Name_english,competitiontable.competitionname,competitiontable.grade,studentstable.overage  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID where studentstable.dahampasala='" + comboBox1.Text + "';", SqlCon.con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGridView1.DataSource = dt;

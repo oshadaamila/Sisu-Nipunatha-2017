@@ -23,7 +23,7 @@ namespace Sisu_Nipunatha
         private void edit_student_Load(object sender, EventArgs e)
         {
             makeReadOnly();
-            MySqlDataAdapter sda = new MySqlDataAdapter("select studentstable.StudentID,studentstable.Name,studentstable.Birthday,studentstable.Name_english,studentstable.telephone,competitiontable.competitionname,competitiontable.grade,studentstable.dahampasala  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID where studentstable.studentID='" + studentID.ToString() + "';", SqlCon.con);
+            MySqlDataAdapter sda = new MySqlDataAdapter("select studentstable.StudentID,studentstable.Name,studentstable.Birthday,studentstable.Name_english,competitiontable.competitionname,competitiontable.grade,studentstable.dahampasala  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID where studentstable.studentID='" + studentID.ToString() + "';", SqlCon.con);
             sda.Fill(dt);
             loadvalues();
         }
@@ -103,7 +103,7 @@ namespace Sisu_Nipunatha
         }
         public void refreshDaatabel()
         {
-            MySqlDataAdapter sda = new MySqlDataAdapter("select studentstable.StudentID,studentstable.Name,studentstable.Birthday,studentstable.Name_english,studentstable.telephone,competitiontable.competitionname,competitiontable.grade,studentstable.dahampasala  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID where studentstable.studentID='" + studentID.ToString() + "';", SqlCon.con);
+            MySqlDataAdapter sda = new MySqlDataAdapter("select studentstable.StudentID,studentstable.Name,studentstable.Birthday,studentstable.Name_english,competitiontable.competitionname,competitiontable.grade,studentstable.dahampasala  FROM studentstable INNER JOIN competitiontable ON studentstable.CompetitionID=competitiontable.CompetitionID where studentstable.studentID='" + studentID.ToString() + "';", SqlCon.con);
             dt.Clear();
             sda.Fill(dt);
         }

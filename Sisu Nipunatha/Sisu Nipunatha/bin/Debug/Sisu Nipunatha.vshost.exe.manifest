@@ -224,14 +224,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Sisu Nipunatha.exe" size="422400">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Sisu Nipunatha.exe" size="355840">
       <assemblyIdentity name="Sisu Nipunatha" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>14yq+hWw/SxAgKSK3ym9cNb2nlIDI8Edt0IuL5ILrL4=</dsig:DigestValue>
+        <dsig:DigestValue>OcarI1QlNczSFSvd2XPA2Sk4kiGG4uerXjhoefVWgW4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
